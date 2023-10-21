@@ -1,0 +1,283 @@
+*{padding: 0; margin: 0; letter-spacing: -0.5px;}
+li{list-style: none;}
+
+$colorMain: #171717;
+$colorSub: #444444;
+$colorText: #735F32;
+$colorText2: #ccc;
+
+$PCfull : 1280px;
+$PCmainContent: 840px;
+$PCsideContent: 420px;
+
+:root {
+  --swiper-theme-color: $colorText !important; 
+}
+
+.App {
+
+  color: $colorText;
+
+  .header{
+    background-color: $colorMain;
+
+    .navbar{
+      max-width: $PCfull; margin: 0 auto;
+      padding: 15px 0;
+      display: flex; justify-content: space-between;
+      align-items: center;
+
+      ul li{
+        display: inline-block;
+        padding: 0 5px;
+        cursor: pointer;
+        &:hover{color: white;}
+      }
+      input{
+        font-size: 14px; background-color: $colorMain;
+        color: white; border: none; border-bottom: 2px solid $colorText;
+        padding: 5px; margin-right: 15px;
+        &::placeholder{color: $colorText;}
+      }
+    }
+  }
+
+  .content{
+    background-color: $colorSub;
+
+    .content-wrap{
+      display: flex;
+      width: 1280px; margin: 0 auto;
+      
+      .main-content{
+        width: $PCmainContent;
+        padding: 15px; box-sizing: border-box;
+        margin: 10px 20px 0 0;
+        background-color: $colorMain;
+        border-radius: 10px;
+  
+        .random-quiz{
+          height: 300px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+  
+          .quiz{
+            height: 100%;
+            border-radius: 10px;
+            background-color: #fff;
+            &:last-child{margin-right: 0;}
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover > .quiz-image{
+              scale: 120%;
+              filter: brightness(60%);
+            }
+
+            .quiz-image{
+              width: 100%; height: 100%;
+              background-size: cover;
+              transition: 0.2s;
+              filter: brightness(40%);
+
+            }
+
+            p.quiz-name{
+              padding: 20px; font-size: 22px;
+              position: absolute;
+              top: 0;
+              color: white;
+              font-size: 20px;
+            }
+
+            p.quiz-start{
+              padding: 20px;
+              position: absolute;
+              bottom: 0; right: 0;
+              color: $colorText; font-weight: bold;
+              font-size: 18px;
+            }
+
+          }
+        }
+
+        .board-home{
+          display: flex; flex-wrap: wrap;
+          margin-top: 15px;
+
+          .board{
+            width: calc((#{$PCmainContent} - 30px - 15px) / 2); /* 양쪽마진, 가운데 마진 = 30px, 15px */
+            margin: 0 15px 15px 0;
+            &:nth-child(2n){margin-right: 0;}
+
+            .board-title{
+              font-size: 20px; font-weight: bold;
+              margin-bottom: 10px; cursor: pointer;
+            }
+
+            .board-content{
+              color: #ccc; font-size: 14px;
+              ul li{
+                display: flex; justify-content: space-between;
+                padding: 5px 0;
+                cursor: pointer;
+                &:hover > p.post-title{
+                  text-decoration: underline;
+                }
+
+                p.post-title{
+                  width: calc(85% - 5px);
+                  margin-left: 5px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+
+                }
+                p.post-date{
+                  width: 15%;
+                  text-align: right;
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: gray;
+                }
+              }
+            }
+          }
+        }
+
+        .slider-home{
+
+          .swiper{
+            border-radius: 10px;
+            overflow: hidden;
+            filter: brightness(90%);
+            &:hover{filter: brightness(100%);}
+
+
+
+            .swiper-pagination{
+              width: 100%; display: flex; justify-content: space-evenly;
+              background-color: rgba($color: #000000, $alpha: 0.7);
+
+              .swiper-button-prev, .swiper-button-next{background-color: black;}
+
+              .swiper-pagination-bullet{
+                color: $colorText2;
+                width: fit-content; height: fit-content;
+                background: none; padding: 10px;
+              }
+            }
+          }
+          
+        }
+      }
+      .side-content{
+        width: $PCsideContent;
+        margin-top: 10px;
+        box-sizing: border-box;
+        
+        border-radius: 10px;
+
+        .my-page{
+          background-color: $colorMain;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 10px;
+          // padding: 0 0 40px 0;
+
+          .canyoujoinus{
+            text-align: center;
+            padding-bottom: 15px;
+            color: $colorText2;
+          }
+
+          .login{
+            width: 100%;
+            text-align: center;
+            background-color: $colorText;
+            color: $colorMain;
+            padding: 20px 0; border-radius: 10px;
+            cursor: pointer;
+            &:hover{filter: brightness(130%);}
+            
+          }
+          .login-options{
+            ul{text-align: center;}
+            li{
+              display: inline-block; margin: 10px; cursor: pointer;
+              &:hover{text-decoration: underline;}
+            }
+          }
+        }
+
+        .d-day{
+
+          background-color: $colorMain;
+          border-radius: 10px;
+          padding: 15px;
+
+          .d-day-title{
+            font-weight: bold;
+            font-size: 20px;
+          }
+  
+          .d-day-content{
+  
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0 10px;
+            
+            
+            .schedule{
+  
+              margin: 15px 0;
+              color: $colorText2;
+  
+              .toeic-date{
+                font-size: 24px; font-weight: bold;
+                
+              }
+              .toeic-dday{
+  
+              }
+              .toeic-deadline-date{
+  
+              }
+              .toeic-result-date{
+  
+              }
+            }
+  
+            .schedule-detail{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+              p{
+                margin-left: auto;
+                font-size: 14px;
+                width: calc(100% - 40px);
+                margin-bottom: 5px;
+                padding: 5px 0;
+                background-color: $colorText;
+                border-radius: 10px;
+                color: #000000;
+                cursor: pointer;
+                &:hover{
+                  filter: brightness(130%);
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+}
