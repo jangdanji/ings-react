@@ -171,6 +171,39 @@ $PCsideContent: 420px;
           }
           
         }
+
+        .board-post{
+
+          color: $colorText2;
+          
+          .post-head{
+
+            .post-category{
+              color: $colorText; background-color: $colorText2; 
+              padding: 5px 10px; border-radius: 5px;
+            }
+            .post-title{
+              padding: 5px 10px;
+            }
+            .head-wrap{
+              display: flex; justify-content: space-between;
+              padding: 10px;
+            }
+
+          }
+          .post-content{
+            p{}
+          }
+          .comment-area{
+            .comment-length{}
+            .comment-wrap{}
+            .comment-write{
+              input{}
+            }
+          }
+        }
+
+
       }
       .side-content{
         width: $PCsideContent;

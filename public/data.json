@@ -1150,5 +1150,17 @@
   "date": "2023-10-09T20:35:00",
   "id": 155,
   "title": "토익 스터디 그룹 참여자 모집",
-  "user": "김소현"}]
+  "user": "김소현"}
+  ],
+  "category" :   [
+    {"id": 1, "categoryName": "질문하기"},
+    {"id": 2, "categoryName": "학습자료 요청/공유"},
+    {"id": 3, "categoryName": "스터디 모집"},
+    {"id": 4, "categoryName": "중고거래"},
+    {"id": 5, "categoryName": "수강 후기"},
+    {"id": 6, "categoryName": "모의고사"},
+    {"id": 7, "categoryName": "자유게시판"},
+    {"id": 8, "categoryName": "입시자료"}
+  ]
+
 }

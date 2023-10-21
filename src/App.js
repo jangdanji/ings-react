@@ -24,10 +24,16 @@ function App() {
         </nav>
       </header>
 
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/board/:id' element={<Board></Board>}></Route>
-      </Routes>
+      <div className='content'>
+
+          <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/board/:id' element={<Board></Board>}></Route>
+          </Routes>
+
+      </div>
+
+
       
 
 
