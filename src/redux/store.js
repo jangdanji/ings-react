@@ -13,12 +13,23 @@ const timeSetter = createSlice({
       }
     }
   })
-  
+
+  const mySchedule = createSlice({
+    name: 'mySchedule',
+    initialState: null,
+    reducers: {
+      setSchedule(state, action){
+
+      }
+    }
+  })
 
 export const { setTime } = timeSetter.actions
+export const { setSchedule } = mySchedule.actions
 
 export default configureStore({
     reducer:{
-        timeSetter: timeSetter.reducer
+        timeSetter: timeSetter.reducer,
+        mySchedule: mySchedule.reducer
     }
 })
