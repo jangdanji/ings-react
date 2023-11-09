@@ -48,6 +48,9 @@ export default function Calendar() {
               initialView='dayGridMonth'
               events={pageData['schedule']}
 
+              height='auto'
+              contentHeight='auto'
+
               buttonText={{
                 today : '오늘',
                 // month:    'month',
@@ -56,46 +59,23 @@ export default function Calendar() {
                 // list:     'list'
               }}
 
-              height='auto'
-              contentHeight='auto'
-
-              // dayMaxEvents={2} /* n개 이상 보이고 그 외는 +1 이런식으로 view more 버튼 생김 */
-              // dayMaxEventRows={1}
-
+              displayEventTime={false} // 시간은 쓰지말자
+              eventDisplay='block' // event 모양
               eventColor='#ccc'
 
-              eventDisplay='block'
-
-              displayEventTime={false}  
-
-
-
-              // showNonCurrentDates={false} // 지난달 다음달 보이기
-
+              dayMaxEvents={2} /* n개 이상 보이고 그 외는 +1 이런식으로 view more 버튼 생김 */
+              
 
               dateClick={(info) => {
                 // alert('클릭 ' + info.dateStr); /* https://fullcalendar.io/docs/dateClick 객체 속성 참고하셈 */
                 setSchedule(info.dateStr)
               }}
 
-              
+              eventClick={(info) => {
+                setSchedule(info.event.startStr.split('T')[0])
+              }}
 
-
-              // expandRows={false}
-
-              // height='1000px'
-
-              // expandRows={true}
-              
-              
-              // eventDisplay='block'
-              // height='auto'
-              // dayMaxEventRows={true}
-              // editable={true}
-              // aspectRatio='1'
-              // eventDisplay='auto'
-              // locale={koLocale}
-              // eventContent={renderEventContent}
+              selectable={true}
             />
           </div>
 
