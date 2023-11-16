@@ -14,10 +14,14 @@ import { BiSolidBookReader } from "react-icons/bi";
 import { setBoardData, searchOption } from './redux/store';
 import { useDispatch } from 'react-redux';
 
+
+
 function App() {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const allPosts = useSelector((state) => state.boardMaker.allPosts)
 
 
   return (
@@ -33,8 +37,11 @@ function App() {
                   if (e.key === 'Enter') {
                     if (e.target.value.length < 2) alert('2글자 이상 입력해주세요.')
                     else {
+
+                      dispatch( loadAllData([allPost, '0', e.target.value, 'all']) )
+
                       navigate('/board/0')
-                      dispatch( searchOption(['all', e.target.value]) )
+                      // dispatch( searchOption(['all', e.target.value]) )
                     }
                   }
 
