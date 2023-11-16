@@ -76,7 +76,7 @@ $PCsideContent: 420px;
         min-height: 780px;
   
         .random-quiz{
-          height: 300px;
+          height: 260px;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 10px;
@@ -91,31 +91,41 @@ $PCsideContent: 420px;
             cursor: pointer;
             &:hover > .quiz-image{
               scale: 120%;
-              filter: brightness(60%);
+              filter: brightness(100%);
             }
+            &:hover > .quiz-name{}
+            &:hover > .quiz-start{}
 
             .quiz-image{
+              
               width: 100%; height: 100%;
               background-size: cover;
               transition: 0.2s;
-              filter: brightness(40%);
+              filter: brightness(50%);
 
             }
 
             p.quiz-name{
-              padding: 20px; font-size: 22px;
+              border-radius: 10px;
+              padding: 2px 20px;
+              font-size: 22px;
               position: absolute;
-              top: 0;
+              top: 10px; left: 10px;
               color: white;
               font-size: 20px;
+              transition: 0.2s;
+              background-color: rgba($color: #000000, $alpha: 0.6);
             }
 
             p.quiz-start{
-              padding: 20px;
+              color: white;
+              padding: 5px 20px; border-radius: 10px;
               position: absolute;
-              bottom: 0; right: 0;
-              color: $colorText; font-weight: bold;
+              bottom: 10px; right: 10px;
+              font-weight: bold;
               font-size: 18px;
+              transition: 0.2s;
+              background-color: rgba($color: #000000, $alpha: 0.6);
             }
 
           }
@@ -452,6 +462,25 @@ $PCsideContent: 420px;
               li > span.active{
                 font-weight: bold;
                 text-decoration: underline;
+              }
+            }
+          }
+
+          .board-search{
+            display: flex; justify-content: center;
+            margin-bottom: 15px;
+            .board-search-wrap{
+              display: flex; justify-content: center;
+              select{
+                padding: 5px 10px; margin-right: 5px; border-radius: 5px;
+                border: none;
+              }
+              input{
+                padding: 5px 10px; margin-right: 5px; border-radius: 5px; border: none;
+              }
+              button{
+                padding: 5px 10px; border-radius: 5px; border: none;
+                cursor: pointer;
               }
             }
           }

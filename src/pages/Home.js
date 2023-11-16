@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useEffect, useState, setState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
@@ -16,11 +16,14 @@ import 'swiper/css/pagination'
 
 import { BiSolidBookReader } from "react-icons/bi";
 
+import { resetPageNum } from '../redux/store';
+
 import Loading from './Loading'
 
 function Home() {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [pageData, setPageData] = useState(null)
 
@@ -69,10 +72,11 @@ function Home() {
 
             <div className='board-home'>
               {
-                pageData['category'].slice(0, 4).map((data) => {
+                pageData['category'].slice(1, 5).map((data) => {
                   return(
                       <div className='board' key={'board-' + data.id}>
-                           <div className='board-title' onClick={ () => navigate(`/board/${data.id}`) }>
+                           <div className='board-title' onClick={ () => {navigate(`/board/${data.id}`); dispatch( resetPageNum() )
+                            }}>
                              <p>{data.categoryName}</p>
                            </div>
                            <div className='board-content'>
@@ -81,7 +85,7 @@ function Home() {
                                 pageData['board'].filter((post) => post.category == data.id).slice(-10).reverse().map((p) => {
                                   return(
                                     <li key={'post' + p.id}>
-                                      <p className='post-title' onClick={ () => navigate(`/post/${p.id}`)}>{p.title}</p>
+                                      <p className='post-title' onClick={ () => {navigate(`/post/${p.id}`); dispatch( resetPageNum() ) }}>{p.title}</p>
                                       <p className='post-date'>{
                                         postDateCalculator(p.date, nowDate)
                                       }</p>
@@ -123,7 +127,7 @@ function Home() {
 
             <div className='board-home'>
             {
-              pageData['category'].slice(4, 8).map((data) => {
+              pageData['category'].slice(5, 9).map((data) => {
                 return(
                     <div className='board' key={'board-' + data.id}>
                         <div className='board-title' onClick={ () => navigate(`/board/${data.id}`) }>

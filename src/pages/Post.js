@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FaUserGraduate, FaCommentDots } from "react-icons/fa";
 import { BsArrowReturnRight, BsFillPencilFill } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
 
 import { postDateCalculator } from './utils'
+
+import { resetPageNum, savePageNum } from '../redux/store';
 
 import Loading from './Loading'
 
@@ -71,8 +73,10 @@ export default function post() {
   }
 
   const nowDate = useSelector((state) => state.timeSetter.currentTime)
+  const pageNumber = useSelector((state) => state.boardMaker.activePage)
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   
 
   if (pageData == null || postData == null) {
@@ -91,7 +95,10 @@ export default function post() {
 
             <div className='post-head'>
               <div className='head-top'>
-                <span className='post-category' onClick={() => navigate('/board/' + postData.category)}>{pageData['category'].find((gory) => gory.id == postData.category).categoryName}</span>
+                <span className='post-category' onClick={() => {
+                  dispatch( resetPageNum() )
+                  navigate('/board/' + postData.category)
+                }}>{pageData['category'].find((gory) => gory.id == postData.category).categoryName}</span>
                 <span className='post-title'>{postData.title}</span>
               </div>
 
@@ -116,7 +123,7 @@ export default function post() {
                 </div>
                 <div>
                   <div className='button-area'>
-                    <button className='post-list' onClick={() => navigate('/board/' + postData.category)}>목록</button>
+                    {/* <button className='post-list' onClick={() => navigate('/board/' + postData.category)}>목록</button> */}
                     <button className='post-report' onClick={() => alert('신고 접수 완료')}>신고</button>
                   </div>
                 </div>

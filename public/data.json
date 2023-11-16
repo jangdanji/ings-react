@@ -3627,6 +3627,12 @@
     }
   ],
   "category": [
+
+    {
+      "id": 0,
+      "categoryName": "전체 게시글",
+      "intro": "전체게시게시게시게글글글래머랑사귀고싶다"
+    },
     {
       "id": 1,
       "categoryName": "질문하기",

@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { FaClipboardList } from "react-icons/fa";
 import { BiSolidChevronRight, BiSolidChevronsRight, BiSolidChevronLeft, BiSolidChevronsLeft } from "react-icons/bi";
 
 import { boardDateCalculator, postDateCalculator } from './utils'
+
+import { loadAllData, setBoardData, searchOption, resetPageNum, savePageNum } from '../redux/store';
 
 import Loading from './Loading'
 
@@ -16,13 +18,35 @@ export default function Board() {
   const { categoryID } = useParams()
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const [pageData, setPageData] = useState(null) /* 모든 데이터 */
-  const [boardData, setBoardData] = useState([]) /* 현재 카테고리의 게시판 데이터 */
-  const [activePage, setActivePage] = useState(1) /* 페이지네이션 기본값 1페이지 */
+  // const [pageData, setPageData] = useState(null) /* 모든 데이터 */
+
+
+  // const [activePage, setActivePage] = useState(1) /* 페이지네이션 기본값 1페이지 */
   const [viewUnit] = useState(15) /* 페이지당 몇개 게시글 보여줄건지 */
 
+  const [nowSelectValue, setSelectValue] = useState('all') /* 검색 타입 */
+  const [searchWord, setSearchWord] = useState('')
+
   const nowDate = useSelector((state) => state.timeSetter.currentTime) /* 현재 날짜 */
+
+  const [allData, setAllData] = useState(null)
+
+  const { allPosts, sortPosts, nowCategory, nowCategoryInfo, searchPosts } = useSelector((state) => ({
+    allPosts: state.boardMaker.allPosts,
+    sortPosts: state.boardMaker.sortPosts,
+    nowCategory: state.boardMaker.nowCategory,
+    nowCategoryInfo: state.boardMaker.nowCategoryInfo,
+    searchPosts: state.boardMaker.searchPosts,
+  }))
+
+  const activePage = useSelector(state => state.boardMaker.activePage)
+  const state = useSelector(state => state.boardMaker)
+
+  console.log(state.activePage + ' 페이지')
+  console.log('검색어 : ' + state.searchWord)
+
 
   function pageLogic(number, postLength){
 
@@ -37,32 +61,53 @@ export default function Board() {
     }
   }
 
+
   useEffect( () => {
 
     fetch(process.env.PUBLIC_URL + '/data.json')
     .then((response) => response.json())
     .then((data) => {
 
-      // 페이지에 필요한 데이터 load
-      const nowCategory = data['board'].filter(post => post.category == categoryID).reverse()
+      setAllData(data)
 
-      setPageData(data)
-      setBoardData(nowCategory)
+      dispatch( loadAllData([data, categoryID]) )
+
+      // if (categoryID === '0')
+      savePageNum(1)
+
+      if (categoryID === '0') dispatch( searchOption(['all', state.searchWord]))
+      else dispatch( searchOption(['all', '']) )
+      
+
+      console.log('카테고리 바뀜 ' + categoryID)
+
+
+
+
+      const searchKeyword = ''
+
+      // dispatch( setBoardData(
+      //   categoryID === '0' ?
+      //     allPosts.filter(post => (post.title + ' ' + post.content).includes(searchKeyword)).reverse()
+      //     :
+      //     allPosts.filter(post => post.category == categoryID).reverse()
+      // ))
+
+      // dispatch( searchOption(['all', pageData['board'].reverse(), searchWord]) )
 
     })
     .catch((error) => console.error('데이터 가져오기 실패 : ', error))
 
-  }, [])
+  }, [categoryID])
 
-  if (pageData == null) {
+  if (allData == null) {
 
     return (<Loading></Loading>)
 
   } else {
 
-    const totalPages = Math.ceil(boardData.length / viewUnit)
-    const categoryInfo = pageData['category'].find(val => val.id == categoryID)
-    const top5posts = boardData.slice().sort((a, b) => b.like - a.like).slice(0, 5)
+    const totalPages = Math.ceil(sortPosts.length / viewUnit)
+    const top5posts = [...sortPosts].sort((a, b) => b.like - a.like).slice(0, 5)
 
     return (
       <div className='content-wrap'>
@@ -77,8 +122,8 @@ export default function Board() {
     
               <div className='info'>
 
-                <div className='title'>{ categoryInfo.categoryName }</div>
-                <div className='intro'>{ categoryInfo.intro }</div>
+                <div className='title'>{ nowCategoryInfo.categoryName }</div>
+                <div className='intro'>{ nowCategoryInfo.intro }</div>
 
               </div>
 
@@ -94,9 +139,9 @@ export default function Board() {
               </ul>
               { 
                 /* 활성 페이지-1 곱하기 보기갯수단위부터 ~ + 단위  */
-                boardData.slice((activePage - 1) * viewUnit, (activePage - 1) * viewUnit + viewUnit).map((post, index) => {
+                sortPosts.slice((activePage - 1) * viewUnit, (activePage - 1) * viewUnit + viewUnit).map((post, index) => {
 
-                  const number = boardData.length - (activePage - 1) * viewUnit - index
+                  const number = sortPosts.length - (activePage - 1) * viewUnit - index
 
                   return(
                     <ul className='post' onClick={() => navigate(`/post/${post.id}`)}>
@@ -105,7 +150,6 @@ export default function Board() {
                       <li className='date'>{boardDateCalculator(post.date, nowDate)}</li>
                       <li className='user'>{post.user}</li>
                       <li className='like'>{post.like}</li>
-                      
                     </ul>
                   )
                 })
@@ -118,9 +162,16 @@ export default function Board() {
               {
               activePage > 3 && totalPages > 5 && /* 활성 페이지네이션이 4 이상이라면 "<< 버튼"  */
               <>
-                <li className='start' onClick={ () => setActivePage(1)}><BiSolidChevronsLeft></BiSolidChevronsLeft></li>
+                <li className='start' onClick={ () => {
+                  dispatch( resetPageNum() )
+                }}>
+                  <BiSolidChevronsLeft></BiSolidChevronsLeft></li>
+
                 <li className='prev' onClick={ () => {
-                  setActivePage(activePage - 5 <= 0 ? 1 : activePage - 5) /* ex 4페이지인데 -5를 해버리면 안되니까 1로 가게하기위함 */
+
+                  const prevClicked = activePage - 5 <= 0 ? 1 : activePage - 5
+
+                  dispatch( savePageNum(prevClicked) ) /* ex 4페이지인데 -5를 해버리면 안되니까 1로 가게하기위함 */
                 }}>
                   <BiSolidChevronLeft></BiSolidChevronLeft>
                 </li>
@@ -136,7 +187,9 @@ export default function Board() {
                   const pageNum = pageLogic(activePage, totalPages) + index /* 페이지 숫자 몇번부터 나열할건지? */
 
                   return(
-                    <li className='page-button' onClick={ () => setActivePage(pageNum)}>
+                    <li className='page-button' onClick={ () => {
+                      dispatch( savePageNum(pageNum) )
+                    }}>
                       <span className={`page-number ${pageNum == activePage ? 'active' : ''}`}>{pageNum}</span> {/* active 상태는 클래스명 따로 주기 */}
                     </li>
                   )
@@ -148,22 +201,56 @@ export default function Board() {
                 activePage < totalPages - 2 && totalPages > 5 &&
                 <>
                   <li className='next' onClick={ () => {
-                    setActivePage( activePage + 5 < totalPages ? activePage + 5 : totalPages)} /* totalPage가 10인데 현재 page가  7일때 +5를 하면 에러나니까 */}>
+
+                    const pageNum = activePage + 5 < totalPages ? activePage + 5 : totalPages
+
+                    dispatch( savePageNum(pageNum) )} /* totalPage가 10인데 현재 page가  7일때 +5를 하면 에러나니까 */}>
                       <BiSolidChevronRight></BiSolidChevronRight>
                   </li>
-                  <li className='end' onClick={ () => setActivePage(totalPages)}><BiSolidChevronsRight></BiSolidChevronsRight></li>
+                  <li className='end' onClick={ () => {
+                    dispatch( savePageNum(totalPages) )
+                  }}><BiSolidChevronsRight></BiSolidChevronsRight></li>
                 </>
               }
 
 
               </ul>
             </div>
+
+            <div className='board-search'>
+              <div className='board-search-wrap'>
+                <select onChange={(event) => setSelectValue(event.target.value)}>
+                  <option value='all'>제목+내용</option>
+                  <option value='title'>제목</option>
+                  <option value='content'>내용</option>
+                  <option value='user'>작성자</option>
+                </select>
+                <input onChange={(event) => setSearchWord(event.target.value)} type='text'></input>
+                <button onClick={() => {
+                    searchWord.length >= 2 ?
+                    dispatch( searchOption([nowSelectValue, searchWord]) )
+                    :
+                    alert('검색어를 2글자 이상 입력해주세요.')
+                  
+                }}>검색</button>
+                {
+                  // setBoardData(
+
+                  // )
+                  
+                  
+                    // pageData['board'].filter(post => post.category == categoryID).reverse().filter(p => p.title.includes('발음'))
+                  
+                    // searchOption([])
+                }
+              </div>
+            </div>
           </div>
         </div>
 
         <div className='side-content'>
           <div className='hot-posts'>
-              <h4 className='title'>게시판 인기 게시글</h4>
+              <h4 className='title'>인기 게시글</h4>
               <ul className='hot-posts-wrap'>
                 {
                   top5posts.map((post) => {

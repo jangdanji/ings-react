@@ -11,9 +11,13 @@ import Calendar from './pages/Calendar'
 
 import { BiSolidBookReader } from "react-icons/bi";
 
+import { setBoardData, searchOption } from './redux/store';
+import { useDispatch } from 'react-redux';
+
 function App() {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
 
   return (
@@ -23,7 +27,19 @@ function App() {
           <div className='logo' onClick={() => navigate('/')}><BiSolidBookReader></BiSolidBookReader>INGS</div>
           <div className='user-menu'>
             <ul>
-              <li><input type='text' placeholder='검색'></input></li>
+              <li>
+                <input type='text' placeholder='검색' onKeyPress={ (e) => {
+
+                  if (e.key === 'Enter') {
+                    if (e.target.value.length < 2) alert('2글자 이상 입력해주세요.')
+                    else {
+                      navigate('/board/0')
+                      dispatch( searchOption(['all', e.target.value]) )
+                    }
+                  }
+
+                }}/>
+              </li>
             </ul>
           </div>
         </nav>
