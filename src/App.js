@@ -12,7 +12,7 @@ import Calendar from './pages/Calendar'
 import { BiSolidBookReader } from "react-icons/bi";
 
 import { setBoardData, searchOption } from './redux/store';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -38,7 +38,7 @@ function App() {
                     if (e.target.value.length < 2) alert('2글자 이상 입력해주세요.')
                     else {
 
-                      dispatch( loadAllData([allPost, '0', e.target.value, 'all']) )
+                      dispatch( loadAllData([allPosts, '0', e.target.value, 'all']) )
 
                       navigate('/board/0')
                       // dispatch( searchOption(['all', e.target.value]) )
