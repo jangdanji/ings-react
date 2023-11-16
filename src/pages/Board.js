@@ -44,10 +44,6 @@ export default function Board() {
   const activePage = useSelector(state => state.boardMaker.activePage)
   const state = useSelector(state => state.boardMaker)
 
-  console.log(state.activePage + ' 페이지')
-  console.log('검색어 : ' + state.searchWord)
-
-
   function pageLogic(number, postLength){
 
     /* 선택한 페이지 숫자에 따라서 페이지네이션 첫 숫자를 정하는 로직 */
@@ -80,6 +76,10 @@ export default function Board() {
       
 
       console.log('카테고리 바뀜 ' + categoryID)
+
+      console.log('검색어 : ' + state.searchWord)
+      console.log('searchPosts : ')
+      console.log(searchPosts)
 
 
 

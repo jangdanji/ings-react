@@ -83,7 +83,7 @@ const boardMaker = createSlice({
 
       state.searchPosts = [...state.sortPosts].filter( (d) => {
 
-        console.log(d.title)
+        // console.log(d.title)
 
         let optionType = ''
 
