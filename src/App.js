@@ -9,6 +9,8 @@ import Board from './pages/Board'
 import Post from './pages/Post'
 import Calendar from './pages/Calendar'
 import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Find from './pages/Find'
 
 import { BiSolidBookReader } from "react-icons/bi";
 
@@ -57,6 +59,8 @@ function App() {
                 <Route path='/board/:categoryID' element={<Board/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
                 <Route path='/login' element={<Login/>}/>
+                <Route path='/signUp' element={<SignUp/>}/>
+                <Route path='/find' element={<Find/>}/>
           </Routes>
 
       </div>

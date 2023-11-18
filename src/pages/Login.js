@@ -17,17 +17,15 @@ export default function Login() {
   };
 
   return (
-    <div className='content-wrap'>
-
       <div className='full-content'>
         
-        <div className="login-container">
+        <div className="member-container">
 
           <div className='logo'><BiSolidBookReader></BiSolidBookReader>INGS</div>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group id-form">
-              <label htmlFor="username">사용자 이름</label>
+              <label htmlFor="username">아이디</label>
               <input 
                 type="text" 
                 id="username" 
@@ -46,9 +44,9 @@ export default function Login() {
             </div>
             <button type="submit" className='login-submit'>로그인</button>
             <div className='other-option'>
-              <p>회원가입</p>
-              <p>아이디 찾기</p>
-              <p>비밀번호 찾기</p>
+              <p onClick={() => navigate('/signUp')}>회원가입</p>
+              <p onClick={() => navigate('/Find')}>아이디 찾기</p>
+              <p onClick={() => navigate('/Find')}>비밀번호 찾기</p>
             </div>
             
           </form>
@@ -56,9 +54,6 @@ export default function Login() {
         </div>
 
       </div>
-
-
-    </div>
 
 
   )

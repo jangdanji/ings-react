@@ -12,6 +12,10 @@ $PCfull : 1280px;
 $PCmainContent: 840px;
 $PCsideContent: 420px;
 
+$headerHeight: 60px;
+$footerHeight: 145px;
+
+
 @mixin icon{
   display: flex; align-items: center;
   svg{margin-right: 5px;}
@@ -26,11 +30,12 @@ $PCsideContent: 420px;
   color: $colorText;
 
   .header{
+    
     background-color: $colorMain;
 
     .navbar{
       max-width: $PCfull; margin: 0 auto;
-      padding: 15px 0;
+      height: $headerHeight;
       display: flex; justify-content: space-between;
       align-items: center;
 
@@ -60,11 +65,12 @@ $PCsideContent: 420px;
 
   .content{
     background-color: $colorSub;
-    padding: 15px 0;
+    
 
     .content-wrap{
       display: flex;
       width: $PCfull; margin: 0 auto;
+      padding: 15px 0;
       
       .main-content{
         width: $PCmainContent;
@@ -388,6 +394,7 @@ $PCsideContent: 420px;
             padding: 0 15px 15px 15px;
             margin: 15px 0;
             color: $colorText2;
+            cursor: pointer;
 
             .icon{
               display: flex; align-items: center;
@@ -831,71 +838,143 @@ $PCsideContent: 420px;
 
       }
 
-      .full-content{
-        width: $PCfull; display: flex; justify-content: center;
+    }
 
-        .login-container{
-          
-          margin: 100px 0;
-          padding: 25px 25px 50px 25px; background-color: $colorMain;
-          border-radius: 10px;
-          
+    .full-content{
+      width: $PCfull;
+      margin: 0 auto;
+      display: flex; justify-content: center;
+      min-height: calc(100vh - $headerHeight - $footerHeight);
+      
 
-          .logo{
-            @include icon;
-            font-size: 24px; letter-spacing: 5px;
-            justify-content: center;
-            padding: 40px 0;
-            // border: 1px solid $colorSub;
-            border-radius: 5px;
+      .member-container{
+        // margin: auto 0;
+        margin: 15px 0;
+        padding: 25px 25px 50px 25px; background-color: $colorMain;
+        border-radius: 10px;
+
+        .logo{
+          @include icon;
+          font-size: 24px; letter-spacing: 5px;
+          justify-content: center;
+          padding: 40px 0;
+          // border: 1px solid $colorSub;
+          border-radius: 5px;
+        }
+
+        .title{
+          font-size: 20px; text-align: center;
+          margin-bottom: 15px;
+        }
+
+        .select-box-find-type{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          text-align: center; border-radius: 5px;
+          margin-bottom: 15px;
+
+          .find-type{
+            padding: 10px 0;
+            background-color: $colorText2;
+            color: gray; cursor: pointer;
           }
-          
-          form{
-            width: 400px;
-            .form-group{
-              label{
-                display: block;
-                color: $colorText2;
-                margin-bottom: 5px;
-                font-size: 15px; letter-spacing: -1px;
-              }
-              input{
-                display: block; width: 100%;
-                padding: 10px; border-radius: 5px;
-                box-sizing: border-box;
-                margin-bottom: 15px;
-                border: none;
-              }
+          .find-type.active{
+            font-weight: bold;
+            background-color: $colorText; color: $colorMain;
+          }
+        }
+
+
+
+
+        
+        form{
+          width: 400px;
+          .form-group{
+            label{
+              display: block;
+              color: $colorText2;
+              margin-bottom: 5px;
+              font-size: 15px; letter-spacing: -1px;
             }
-            .login-submit{
-              width: 100%;
-              border-radius: 5px; border: none;
-              padding: 10px 0; background-color: $colorText;
-              margin: 5px 0; font-size: 16px;
-              transition: 0.1s; cursor: pointer;
-              &:hover{
-                filter: brightness(130%);
-              }
+            input{
+              display: block; width: 100%;
+              padding: 10px; border-radius: 5px;
+              box-sizing: border-box;
+              margin-bottom: 15px;
+              border: none;
             }
+          }
+          .login-submit{
+            width: 100%;
+            border-radius: 5px; border: none;
+            padding: 10px 0; background-color: $colorText;
+            margin: 5px 0; font-size: 16px;
+            transition: 0.1s; cursor: pointer;
+            &:hover{
+              filter: brightness(130%);
+            }
+          }
 
-            .other-option{
-              display: flex; justify-content: space-around;
-              padding: 10px 0; font-size: 15px; letter-spacing: -1px;
-              color: $colorText2; font-size: 14px;
+          .other-option{
+            display: flex; justify-content: space-around;
+            padding: 10px 0; font-size: 15px; letter-spacing: -1px;
+            color: $colorText2; font-size: 14px;
 
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
-              p{
-                text-align: center;
-                cursor: pointer;
-                &:hover{text-decoration: underline;}
-              }
+            p{
+              text-align: center;
+              cursor: pointer;
+              &:hover{text-decoration: underline;}
             }
           }
         }
-      }
 
+        .privacy-policy{
+          width: 100%;
+          
+          pre{
+            color: $colorText2;
+            height: 200px; padding: 10px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            // overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            font-size: 14px;
+            font-family: 'san-serif';
+
+            &::-webkit-scrollbar {
+              width: 10px;
+            }
+
+            &::-webkit-scrollbar-track { /* 스크롤바 트랙 */
+              background: none;
+              border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb { /* 스크롤바 핸들 */
+              background: #888;
+              border-radius: 10px;
+            }
+            
+          }
+        }
+
+        .terms-checkbox{
+          input{margin-right: 10px;}
+          padding: 15px;
+          color: $colorText2;
+        }
+
+      }
+    }
+
+    .sign-up-container{
+      width: $PCfull; display: flex; justify-content: center;
+      margin: 0 auto;
     }
 
 
@@ -903,11 +982,14 @@ $PCsideContent: 420px;
 
   .footer{
     background-color: $colorMain;
+    
 
     .footer-wrap{
       max-width: $PCfull; margin: 0 auto;
-      padding: 15px 0;
+      height: $footerHeight;
+      // padding: 15px 0;
       display: flex; flex-direction: column;
+      justify-content: center;
       align-items: center;
 
       .logo{
