@@ -8,21 +8,18 @@ import Home from './pages/Home'
 import Board from './pages/Board'
 import Post from './pages/Post'
 import Calendar from './pages/Calendar'
+import Login from './pages/Login'
 
 import { BiSolidBookReader } from "react-icons/bi";
 
-import { setBoardData, searchOption } from './redux/store';
+import { savePageNum, setSearchWord } from './redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-
 
 
 function App() {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
-  const allPosts = useSelector((state) => state.boardMaker.allPosts)
-
 
   return (
     <div className="App">
@@ -38,10 +35,10 @@ function App() {
                     if (e.target.value.length < 2) alert('2글자 이상 입력해주세요.')
                     else {
 
-                      dispatch( loadAllData([allPosts, '0', e.target.value, 'all']) )
+                      dispatch ( savePageNum(1) )
+                      
+                      navigate(`/board/0/?searchWord=${e.target.value}&searchOption=all`);
 
-                      navigate('/board/0')
-                      // dispatch( searchOption(['all', e.target.value]) )
                     }
                   }
 
@@ -59,6 +56,7 @@ function App() {
                 <Route path='/calendar' element={<Calendar/>}/>
                 <Route path='/board/:categoryID' element={<Board/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
+                <Route path='/login' element={<Login/>}/>
           </Routes>
 
       </div>

@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { FaClipboardList } from "react-icons/fa";
@@ -9,40 +9,44 @@ import { BiSolidChevronRight, BiSolidChevronsRight, BiSolidChevronLeft, BiSolidC
 
 import { boardDateCalculator, postDateCalculator } from './utils'
 
-import { loadAllData, setBoardData, searchOption, resetPageNum, savePageNum } from '../redux/store';
+import { loadAllData, savePageNum } from '../redux/store';
 
 import Loading from './Loading'
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search)
+}
+
 export default function Board() {
+
+  /* url로 받는 파라미터들 */
 
   const { categoryID } = useParams()
 
+  const query = useQuery()
+  const searchWord = query.get("searchWord") !== null ? query.get("searchWord") : ''
+  const searchOption = query.get("searchOption") !== null ? query.get("searchOption") : 'all'
+
+  /* navigate, dispatch */
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
-  // const [pageData, setPageData] = useState(null) /* 모든 데이터 */
-
-
-  // const [activePage, setActivePage] = useState(1) /* 페이지네이션 기본값 1페이지 */
+  
   const [viewUnit] = useState(15) /* 페이지당 몇개 게시글 보여줄건지 */
 
+  const [inputValue, setinputValue] = useState('') /* 검색 단어 (input이 onchange될때마다 여기에 담겨짐) */
   const [nowSelectValue, setSelectValue] = useState('all') /* 검색 타입 */
-  const [inputValue, setinputValue] = useState('') /* input이 onchange될때마다 여기에 담겨짐 */
-  const [searchWord, setSearchWord] = useState('') /* 최종적으로 input에 다 입력해서 버튼을 누르면 setSearchWord */
 
   const nowDate = useSelector((state) => state.timeSetter.currentTime) /* 현재 날짜 */
 
-  const [allData, setAllData] = useState(null)
+  const activePage = useSelector(state => state.boardMaker.activePage) /* 현재 활성화 된 페이지 */
 
-  const { allPosts, sortPosts, nowCategory, nowCategoryInfo } = useSelector((state) => ({
+  const [categoryInfo, loadCategoryInfo] = useState({}) /* 카테고리 정보 */
+
+  const { allPosts, sortPosts } = useSelector((state) => ({ /* 메인 데이터 */
     allPosts: state.boardMaker.allPosts,
     sortPosts: state.boardMaker.sortPosts,
-    nowCategory: state.boardMaker.nowCategory,
-    nowCategoryInfo: state.boardMaker.nowCategoryInfo,
   }))
-
-  const activePage = useSelector(state => state.boardMaker.activePage)
-  const state = useSelector(state => state.boardMaker)
 
   function pageLogic(number, postLength){
 
@@ -64,41 +68,29 @@ export default function Board() {
     .then((response) => response.json())
     .then((data) => {
 
-      setAllData(data)
+      console.log('데이터 로딩')
 
-      dispatch( loadAllData([data, categoryID, searchWord, nowSelectValue]) )
-
-      /* searchWord는 board 들어올때마다 '' 로 초기화됨 */
+      /* searchWord는 board 들어올때마다 '' 로 초기화됨 (상단 useState) */
       /* nowSelectValue : 전체검색 all, 제목 검색 title, 내용 검색 content, 작성자 검색 user */
 
-      // if (categoryID === '0')
-      savePageNum(1)
+      // dispatch( savePageNum(1) )
 
-      // if (categoryID === '0') dispatch( searchOption(['all', state.searchWord]))
-      // else dispatch( searchOption(['all', '']) )
-      
-      console.log('카테고리 : ' + categoryID)
-      console.log('검색어 : ' + searchWord)
+      dispatch( loadAllData(
+        [data['board'],
+        categoryID,
+        searchWord, /* url에 담김 */
+        searchOption /* url에 담김 */
+      ]) )
 
-
-
-      const searchKeyword = ''
-
-      // dispatch( setBoardData(
-      //   categoryID === '0' ?
-      //     allPosts.filter(post => (post.title + ' ' + post.content).includes(searchKeyword)).reverse()
-      //     :
-      //     allPosts.filter(post => post.category == categoryID).reverse()
-      // ))
-
-      // dispatch( searchOption(['all', pageData['board'].reverse(), searchWord]) )
+      loadCategoryInfo(data['category'][categoryID]) /* 카테고리 번호가 여기 index에 드감 */
 
     })
     .catch((error) => console.error('데이터 가져오기 실패 : ', error))
 
-  }, [categoryID, searchWord])
+  }, [categoryID, searchWord, searchOption])
 
-  if (allData == null) {
+
+  if (allPosts.length === 0) {
 
     return (<Loading></Loading>)
 
@@ -106,7 +98,10 @@ export default function Board() {
 
     const totalPages = Math.ceil(sortPosts.length / viewUnit)
 
-    const top5posts = allPosts.filter((post) => categoryID == post.category).sort((a, b) => b.like - a.like).slice(0, 5) 
+    const targetCategory = categoryID === '0' ?
+              allPosts : allPosts.filter((post) => categoryID == post.category)
+
+    const top5posts = [...targetCategory].sort((a, b) => b.like - a.like).slice(0, 5) 
 
     return (
       <div className='content-wrap'>
@@ -119,10 +114,13 @@ export default function Board() {
 
               <div className='icon'><FaClipboardList></FaClipboardList></div>
     
-              <div className='info'>
+              <div className='info' onClick={ () => {
+                navigate(`/board/${categoryID}/?searchWord=&searchOption=all`)
+                dispatch( savePageNum(1) )
+              }}>
 
-                <div className='title'>{ nowCategoryInfo.categoryName }</div>
-                <div className='intro'>{ nowCategoryInfo.intro }</div>
+                <div className='title'>{ categoryInfo.categoryName }</div>
+                <div className='intro'>{ categoryInfo.intro }</div>
 
               </div>
 
@@ -162,7 +160,7 @@ export default function Board() {
               activePage > 3 && totalPages > 5 && /* 활성 페이지네이션이 4 이상이라면 "<< 버튼"  */
               <>
                 <li className='start' onClick={ () => {
-                  dispatch( resetPageNum() )
+                  dispatch( savePageNum(1) )
                 }}>
                   <BiSolidChevronsLeft></BiSolidChevronsLeft></li>
 
@@ -226,21 +224,16 @@ export default function Board() {
                 </select>
                 <input onChange={(event) => setinputValue(event.target.value)} type='text'></input>
                 <button onClick={() => {
-                    inputValue.length >= 2 ?
-                    setSearchWord(inputValue)
-                    :
-                    alert('검색어를 2글자 이상 입력해주세요.')
-                }}>검색</button>
-                {
-                  // setBoardData(
 
-                  // )
-                  
-                  
-                    // pageData['board'].filter(post => post.category == categoryID).reverse().filter(p => p.title.includes('발음'))
-                  
-                    // searchOption([])
-                }
+                    console.log(inputValue.length >= 2);
+
+                    if (inputValue.length >= 2) {
+                      navigate(`/board/${categoryID}/?searchWord=${inputValue}&searchOption=${nowSelectValue}`);
+                    } else {
+                      alert('검색어를 2글자 이상 입력해주세요.')
+                    }
+
+                }}>검색</button>
               </div>
             </div>
           </div>

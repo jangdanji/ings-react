@@ -64,7 +64,7 @@ $PCsideContent: 420px;
 
     .content-wrap{
       display: flex;
-      width: 1280px; margin: 0 auto;
+      width: $PCfull; margin: 0 auto;
       
       .main-content{
         width: $PCmainContent;
@@ -829,6 +829,71 @@ $PCsideContent: 420px;
           }
         }
 
+      }
+
+      .full-content{
+        width: $PCfull; display: flex; justify-content: center;
+
+        .login-container{
+          
+          margin: 100px 0;
+          padding: 25px 25px 50px 25px; background-color: $colorMain;
+          border-radius: 10px;
+          
+
+          .logo{
+            @include icon;
+            font-size: 24px; letter-spacing: 5px;
+            justify-content: center;
+            padding: 40px 0;
+            // border: 1px solid $colorSub;
+            border-radius: 5px;
+          }
+          
+          form{
+            width: 400px;
+            .form-group{
+              label{
+                display: block;
+                color: $colorText2;
+                margin-bottom: 5px;
+                font-size: 15px; letter-spacing: -1px;
+              }
+              input{
+                display: block; width: 100%;
+                padding: 10px; border-radius: 5px;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                border: none;
+              }
+            }
+            .login-submit{
+              width: 100%;
+              border-radius: 5px; border: none;
+              padding: 10px 0; background-color: $colorText;
+              margin: 5px 0; font-size: 16px;
+              transition: 0.1s; cursor: pointer;
+              &:hover{
+                filter: brightness(130%);
+              }
+            }
+
+            .other-option{
+              display: flex; justify-content: space-around;
+              padding: 10px 0; font-size: 15px; letter-spacing: -1px;
+              color: $colorText2; font-size: 14px;
+
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+
+              p{
+                text-align: center;
+                cursor: pointer;
+                &:hover{text-decoration: underline;}
+              }
+            }
+          }
+        }
       }
 
     }

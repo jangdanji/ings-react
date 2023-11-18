@@ -6,11 +6,11 @@ const timeSetter = createSlice({
       currentTime: new Date()
     },
     reducers: {
-      setTime(state, actions){
-        console.log('state : ' + state)
-        console.log('action : ' + new Date(actions.payload))
-        return state.toString()
-      }
+      // setTime(state, actions){
+      //   console.log('state : ' + state)
+      //   console.log('action : ' + new Date(actions.payload))
+      //   return state.toString()
+      // }
     }
   })
 
@@ -29,9 +29,6 @@ const boardMaker = createSlice({
   initialState: {
     allPosts: [],
     sortPosts: [],
-    nowCategory: 0,
-    nowCategoryInfo: null,
-    searchWord: '',
     activePage: 1
   },
   reducers: {
@@ -39,55 +36,39 @@ const boardMaker = createSlice({
 
           const data = action.payload[0]
           const categoryID = action.payload[1]
-          const searchWord = action.payload[2]; state.searchWord = searchWord
+          const searchWord = action.payload[2]
           const option = action.payload[3]
-          
-          const allPosts = [...data['board']].reverse()
 
-          const sortPosts = categoryID === '0' ? allPosts : [...data['board']].filter(post => {
+          /* 이러는 이유 : 메인화면에서 전체게시글 검색하면 데이터가 통 json (원래 요구하던거) 이 아니라 state에 있는 allPosts를 사용해서 loadAllData를 불러옴  */
+          const allPosts = [...data].reverse()
+
+          const sortPosts = [...allPosts].filter(post => {
             
-            let optionType
+            let optionType = ''
 
             if (option === 'all') optionType = post.title + ' ' + post.content
             else if (option === 'title') optionType = post.title
             else if (option === 'content') optionType = post.content
             else if (option === 'user') optionType = post.user
             
-            return (optionType).includes(searchWord) && post.category == categoryID
-
+            if (categoryID === '0') {
+              return (optionType).includes(searchWord)
+            } else {
+              return (optionType).includes(searchWord) && post.category.toString() === categoryID
+            }
+            
           }).reverse()
-
-          const nowCategoryInfo = data['category'].find(val => val.id == categoryID)
 
           const newState = {
             allPosts: allPosts,
             sortPosts: sortPosts,
-            nowCategory: categoryID,
-            nowCategoryInfo: nowCategoryInfo,
             activePage: state.activePage
           }
 
+          console.log(newState)
+
           return newState
 
-          // setPageData(data)
-    
-          // const searchKeyword = ''
-    
-          // dispatch( setBoardData(
-          //   categoryID === '0' ?
-          //     data['board'].filter(post => (post.title + ' ' + post.content).includes(searchKeyword)).reverse()
-          //     :
-          //     data['board'].filter(post => post.category == categoryID).reverse()
-          // ))
-  
-        // dispatch( searchOption(['all', pageData['board'].reverse(), searchWord]) )
-
-    },
-    setBoardData(state, action){
-      state.sortData = action.payload
-    },
-    resetPageNum(state, action){
-      state.activePage = 1
     },
     savePageNum(state, action){
       state.activePage = action.payload
@@ -97,7 +78,7 @@ const boardMaker = createSlice({
 
 export const { setTime } = timeSetter.actions
 export const { setSchedule } = mySchedule.actions
-export const { loadAllData, setBoardData, searchOption, resetPageNum, savePageNum } = boardMaker.actions
+export const { loadAllData, savePageNum } = boardMaker.actions
 
 export default configureStore({
     reducer:{

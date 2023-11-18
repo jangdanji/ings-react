@@ -9,7 +9,7 @@ import { AiFillLike } from "react-icons/ai";
 
 import { postDateCalculator } from './utils'
 
-import { resetPageNum, savePageNum } from '../redux/store';
+import { savePageNum } from '../redux/store';
 
 import Loading from './Loading'
 
@@ -96,7 +96,7 @@ export default function post() {
             <div className='post-head'>
               <div className='head-top'>
                 <span className='post-category' onClick={() => {
-                  dispatch( resetPageNum() )
+                  dispatch( savePageNum(1) )
                   navigate('/board/' + postData.category)
                 }}>{pageData['category'].find((gory) => gory.id == postData.category).categoryName}</span>
                 <span className='post-title'>{postData.title}</span>

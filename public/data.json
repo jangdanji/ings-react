@@ -3673,5 +3673,17 @@
       "categoryName": "입시자료",
       "intro": "입시자료 게시판은 다양한 입시 시험 자료 및 정보를 공유하고, 합격을 향한 준비에 도움을 주는 공간입니다. 함께 성공을 위한 자료를 찾거나 공유하세요!"
     }
+  ],
+  "member" : [
+    {
+      "userNum" : 0,
+      "userID": "test",
+      "userPW": "test",
+      "userName" : "김나단",
+      "userGender" : "남성",
+      "userEmail" : "defmaybe69@gmail.com",
+      "userBirth" : "960224",
+      "userPhone" : "01012345678"
+    }
   ]
 }
