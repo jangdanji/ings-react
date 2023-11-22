@@ -92,7 +92,7 @@ export default function Calendar() {
 
           <div className='my-page'>
 
-              <p className='canyoujoinus'>로그인하셔서 개인 일정을 관리해보세요.</p>
+              <p className='message-box'>로그인하셔서 개인 일정을 관리해보세요.</p>
               <div className='login'>
                 <p className='logo'><BiSolidBookReader></BiSolidBookReader>INGS 로그인</p>
               </div>

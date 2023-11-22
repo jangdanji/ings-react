@@ -601,10 +601,21 @@ $footerHeight: 145px;
           
           // padding: 0 0 40px 0;
 
-          .canyoujoinus{
+          .message-box{
             text-align: center;
             padding-bottom: 15px;
             color: $colorText2;
+          }
+
+          .my-page{
+            display: flex; justify-content: center;
+            background-color: $colorText;
+            color: $colorMain;
+            padding: 10px;
+            border-radius: 10px;
+
+            .logo{@include icon;}
+            
           }
 
           .login{
@@ -842,14 +853,15 @@ $footerHeight: 145px;
 
     .full-content{
       width: $PCfull;
-      margin: 0 auto;
       display: flex; justify-content: center;
-      min-height: calc(100vh - $headerHeight - $footerHeight);
+      min-height: calc(100vh - $headerHeight - $footerHeight - 30px); /* 패딩값 30px */
+      padding: 15px 0;
+      margin: 0 auto;
       
 
       .member-container{
-        // margin: auto 0;
-        margin: 15px 0;
+        margin: auto 0;
+        // margin: 15px 0;
         padding: 25px 25px 50px 25px; background-color: $colorMain;
         border-radius: 10px;
 
@@ -891,18 +903,33 @@ $footerHeight: 145px;
         form{
           width: 400px;
           .form-group{
+            position: relative;
             label{
               display: block;
               color: $colorText2;
               margin-bottom: 5px;
               font-size: 15px; letter-spacing: -1px;
             }
-            input{
+            input, select{
               display: block; width: 100%;
               padding: 10px; border-radius: 5px;
               box-sizing: border-box;
               margin-bottom: 15px;
               border: none;
+            }
+            &.phone-form, &.cert-form{
+              position: relative;
+              
+              .cert-btn{
+                font-size: 14px; font-weight: bold;
+                position: absolute; top: 33px; right: 10px;
+                cursor: pointer;
+              }
+            }
+            .check-msg{
+              position: absolute; right: 0; top: 0;
+              font-size: 14px;
+              color: rgba($color: red, $alpha: 0.8);
             }
           }
           .login-submit{

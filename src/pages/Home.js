@@ -16,7 +16,7 @@ import 'swiper/css/pagination'
 
 import { BiSolidBookReader } from "react-icons/bi";
 
-import { savePageNum } from '../redux/store';
+import { savePageNum, setLoginStatus } from '../redux/store';
 
 import Loading from './Loading'
 
@@ -39,6 +39,15 @@ function Home() {
   })
 
   const nowDate = useSelector((state) => state.timeSetter.currentTime)
+
+  // const isLogin = useSelector((state) => state.userState.loginStatus)
+  // const loginUser = useSelector((state) => )
+
+  const { isLogin, loginUser } = useSelector((state) => ({
+    isLogin: state.userState.loginStatus,
+    loginUser: state.userState.loginData
+  }))
+
 
   // 노션 데이터베이스 api는 cors때문에 안되므로 jsonbin으로 옮겨야 할듯
 
@@ -160,16 +169,49 @@ function Home() {
         <div className='side-content'>
 
             <div className='my-page'>
-              <p className='canyoujoinus'>로그인하셔서 더 많은 컨텐츠를 누리세요!</p>
-              <div className='login' onClick={() => navigate('/login')}>
-                <p className='logo'><BiSolidBookReader></BiSolidBookReader>INGS 로그인</p>
-              </div>
-              <div className='login-options'>
-                <ul>
-                  <li>회원가입</li>
-                  <li>계정찾기</li>
-                </ul>
-              </div>
+              {
+                !isLogin &&
+                <>
+                  <p className='message-box'>로그인하셔서 더 많은 컨텐츠를 누리세요!</p>
+                  <div className='login' onClick={() => navigate('/login')}>
+                    <p className='logo'><BiSolidBookReader></BiSolidBookReader>INGS 로그인</p>
+                  </div>
+                  <div className='login-options'>
+                    <ul>
+                      <li onClick={() => navigate('/signUp')}>회원가입</li>
+                      <li onClick={() => navigate('/find')}>계정찾기</li>
+                    </ul>
+                  </div>
+                </>
+              }
+
+              {
+                isLogin &&
+                <>
+                  <p className='message-box'>안녕하세요, {loginUser.userName}님!</p>
+                  <div className='my-page'>
+                    <p className='logo'>
+                      <BiSolidBookReader></BiSolidBookReader>
+                      {loginUser.userName} (가입일 : {
+                        new Date(loginUser.userJoinDate).toISOString().split('T')[0]
+                    })</p>
+                  </div>
+
+
+                  <div className='login-options'>
+                    <ul>
+                      <li onClick={() => navigate('/myPage')}>나의 정보</li>
+                      <li onClick={() => navigate(`/board/0/?searchWord=${loginUser.userName}&searchOption=user`)}>나의 글</li>
+                      <li onClick={() => {
+                        dispatch( setLoginStatus([false, '']) )
+                        alert('로그아웃 되었습니다.')
+                        navigate('/')
+                      }}>로그아웃</li>
+                    </ul>
+                  </div>
+                </>
+              }
+
             </div>
 
             <div className='d-day'>

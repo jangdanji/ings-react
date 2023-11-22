@@ -1,5 +1,26 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
+const userState = createSlice({
+  name: 'userState',
+  initialState: {
+    loginStatus: false,
+    loginData: {}
+  },
+  reducers: {
+    setLoginStatus(state, action){
+
+      const loginStatus = action.payload[0]
+      const loginData = action.payload[1]
+
+      return {
+        loginStatus: loginStatus,
+        loginData: loginData
+      }
+      
+    }
+  }
+})
+
 const timeSetter = createSlice({
     name:'timeSetter',
     initialState: {
@@ -76,12 +97,14 @@ const boardMaker = createSlice({
   }
 })
 
+export const { setLoginStatus } = userState.actions
 export const { setTime } = timeSetter.actions
 export const { setSchedule } = mySchedule.actions
 export const { loadAllData, savePageNum } = boardMaker.actions
 
 export default configureStore({
     reducer:{
+        userState: userState.reducer,
         timeSetter: timeSetter.reducer,
         mySchedule: mySchedule.reducer,
         boardMaker: boardMaker.reducer

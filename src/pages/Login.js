@@ -3,18 +3,49 @@ import React, { useEffect, useState } from 'react'
 import { BiSolidBookReader } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux'
+import { setLoginStatus } from '../redux/store'
+
 export default function Login() {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const [member, loadMember] = useState([])
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect( () => {
+    fetch(process.env.PUBLIC_URL + '/data.json')
+    .then((response) => response.json())
+    .then((data) => {
+      loadMember(data['member'])
+    })
+    .catch((error) => console.log('fetch 실패 : ' + error))
+  }, [])
+
   const handleSubmit = (e) => {
+
     e.preventDefault();
-    // 로그인 처리 로직을 여기에 추가하세요.
-    console.log('로그인 시도:', username, password);
-    // 예를 들어, 로그인 API 호출 등
-  };
+
+    const idValue = e.target[0].value
+    const pwValue = e.target[1].value
+
+    const findMember = member.find((user) => {
+      return user.userID === idValue && user.userPW === pwValue
+    })
+
+    if (findMember === undefined) {
+      alert('존재하지 않는 사용자입니다.')
+    }
+    else {
+
+      alert('안녕하세요 ' + findMember.userName + '님!')
+      dispatch( setLoginStatus([true, findMember]) )
+      navigate('/')
+    }
+  }
 
   return (
       <div className='full-content'>

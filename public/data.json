@@ -3677,13 +3677,13 @@
   "member" : [
     {
       "userNum" : 0,
-      "userID": "test",
-      "userPW": "test",
-      "userName" : "김나단",
-      "userGender" : "남성",
-      "userEmail" : "defmaybe69@gmail.com",
-      "userBirth" : "960224",
-      "userPhone" : "01012345678"
+      "userJoinDate" : "Sun Nov 19 2023 21:08:35 GMT+0900 (한국 표준시)",
+      "userID": "test1234",
+      "userPW": "test1234",
+      "userName" : "루시우",
+      "userGender" : "male",
+      "userPhone" : "01012345678",
+      "userEmail" : "defmaybe69@gmail.com"
     }
   ]
 }
