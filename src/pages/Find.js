@@ -19,11 +19,10 @@ export default function Find() {
   const [userCertNum, setUserCertNum] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // 로그인 처리 로직을 여기에 추가하세요.
-    // console.log('로그인 시도:', username, password);
-    // 예를 들어, 로그인 API 호출 등
-  };
+    e.preventDefault()
+
+
+  }
 
   return (
       <div className='full-content'>
@@ -53,7 +52,7 @@ export default function Find() {
                 <div className="form-group email-form">
                   <label htmlFor="userEmail">이메일</label>
                   <input 
-                    type="number" 
+                    type="text" 
                     id="userEmail" 
                     value={userEmail} 
                     onChange={(e) => setUserEmail(e.target.value)} 
@@ -115,13 +114,34 @@ export default function Find() {
 
             <button type="submit" className='login-submit' onClick={() => {
 
-              IDorPW === true && alert('이메일로 아이디가 전송되었습니다.')
+              if (
+                  userName === '' ||
+                  (IDorPW && userEmail === '') ||
+                  (!IDorPW && userID === '') ||
+                  (!IDorPW && userPhone === '')
+                ) {
+                alert('빈 칸없이 작성해 주세요.')
+              }
+              else if (
+                // !IDorPW && userCertNum === '' ||
+                !IDorPW && !isCertDone) {
+                  alert('휴대폰 인증을 완료해주세요.')
+                }
+              else if (IDorPW === true) {
+                alert('이메일로 아이디가 전송되었습니다.')
+                setCertSend(false); setCertDone(false);
+                navigate('/login')
+              }
+              else if (isCertDone) {
+                alert('임시비밀번호가 전송되었습니다.')
+                setCertSend(false); setCertDone(false);
+                navigate('/login')
+              }
 
-              isCertDone && alert('임시비밀번호가 전송되었습니다.')
 
-              
+
               /* 인증번호 전송완료, 인증완료 state 초기화 */
-              setCertSend(false); setCertDone(false);
+              
 
             }}>{IDorPW ? '이메일로 아이디 받기' : '임시비밀번호 받기'}</button>
             {/* <div className='other-option'>

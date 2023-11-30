@@ -37,7 +37,7 @@ export default function Board() {
   const [inputValue, setinputValue] = useState('') /* 검색 단어 (input이 onchange될때마다 여기에 담겨짐) */
   const [nowSelectValue, setSelectValue] = useState('all') /* 검색 타입 */
 
-  const nowDate = useSelector((state) => state.timeSetter.currentTime) /* 현재 날짜 */
+  const nowDate = new Date() /* 현재 날짜 */
 
   const activePage = useSelector(state => state.boardMaker.activePage) /* 현재 활성화 된 페이지 */
 

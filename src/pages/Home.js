@@ -27,18 +27,18 @@ function Home() {
 
   const [pageData, setPageData] = useState(null)
 
-  useState(() => {
-
-    fetch('./data.json')
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + '/data.json')
     .then((response) => response.json())
     .then((data) => {
+      
       setPageData(data)
     })
     .catch((error) => console.log(error))
 
   })
 
-  const nowDate = useSelector((state) => state.timeSetter.currentTime)
+  const nowDate = new Date()
 
   // const isLogin = useSelector((state) => state.userState.loginStatus)
   // const loginUser = useSelector((state) => )
@@ -112,10 +112,12 @@ function Home() {
             </div>
 
             <div className='random-quiz'>
-              {pageData['quiz'].map((quiz) => {
+              {[...pageData['quiz']].map((quiz) => {
+
+                const url = quiz.image
 
                 const bg = {
-                  backgroundImage: `url(${quiz.image})`
+                  backgroundImage: `url(${url})`
                 }
 
                 return(

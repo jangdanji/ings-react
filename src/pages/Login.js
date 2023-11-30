@@ -76,8 +76,7 @@ export default function Login() {
             <button type="submit" className='login-submit'>로그인</button>
             <div className='other-option'>
               <p onClick={() => navigate('/signUp')}>회원가입</p>
-              <p onClick={() => navigate('/Find')}>아이디 찾기</p>
-              <p onClick={() => navigate('/Find')}>비밀번호 찾기</p>
+              <p onClick={() => navigate('/Find')}>계정 찾기</p>
             </div>
             
           </form>

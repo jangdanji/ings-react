@@ -72,7 +72,7 @@ export default function post() {
 
   }
 
-  const nowDate = useSelector((state) => state.timeSetter.currentTime)
+  const nowDate = new Date()
   const pageNumber = useSelector((state) => state.boardMaker.activePage)
 
   const navigate = useNavigate()
