@@ -119,7 +119,15 @@ function Home() {
                 }
 
                 return(
-                  <div key={'quiz-' + quiz.id} className='quiz' onClick={() => navigate('/exam')}>
+                  <div key={'quiz-' + quiz.id} className='quiz' onClick={() => {
+
+                    if (quiz.examType == 'lc') {
+                      alert('준비중입니다.. 죄송합니다..')
+                    } else {
+                      navigate(`/exam/${quiz.examType}`)
+                    }
+                    
+                  }}>
                     <div className='quiz-image' style={bg}>
                       
                     </div>

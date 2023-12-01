@@ -20,27 +20,19 @@
     {
       "id": 1,
       "name": "랜덤 토익 문제",
-      "image": "/img/quiz_01.png",
-      "quiz-MCQ": {
-        "question": "The British Wildlife Foundation ------- donations last week by calling its longtime members.",
-        "option": [
-          "solicit",
-          "solicits",
-          "are soliciting",
-          "solicited"
-        ],
-        "answer": "",
-        "solution": ""
-      }
+      "examType" : "rc",
+      "image": "/img/quiz_01.png"
     },
     {
       "id": 2,
       "name": "랜덤 토익 단어",
+      "examType" : "words",
       "image": "/img/quiz_02.png"
     },
     {
       "id": 3,
       "name": "랜덤 토익 스피킹",
+      "examType" : "lc",
       "image": "/img/quiz_03.png"
     }
   ],

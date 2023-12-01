@@ -61,7 +61,7 @@ function App() {
                 <Route path='/calendar' element={<Calendar/>}/>
                 <Route path='/board/:categoryID' element={<Board/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
-                <Route path='/exam' element={<Exam/>}/>
+                <Route path='/exam/:examType' element={<Exam/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>
                 <Route path='/find' element={<Find/>}/>
