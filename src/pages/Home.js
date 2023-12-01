@@ -36,7 +36,7 @@ function Home() {
     })
     .catch((error) => console.log(error))
 
-  })
+  }, [])
 
   const nowDate = new Date()
 
@@ -112,16 +112,14 @@ function Home() {
             </div>
 
             <div className='random-quiz'>
-              {[...pageData['quiz']].map((quiz) => {
-
-                const url = quiz.image
-
+              {[...pageData['quiz']].map((quiz, index) => {
+                
                 const bg = {
-                  backgroundImage: `url(${url})`
+                  backgroundImage: `url(\'${process.env.PUBLIC_URL + quiz.image}\')`
                 }
 
                 return(
-                  <div key={'quiz-' + quiz.id} className='quiz'>
+                  <div key={'quiz-' + quiz.id} className='quiz' onClick={() => navigate('/exam')}>
                     <div className='quiz-image' style={bg}>
                       
                     </div>

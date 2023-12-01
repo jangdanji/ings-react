@@ -12,11 +12,13 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Find from './pages/Find'
 import MyPage from './pages/MyPage'
+import Exam from './pages/Exam';
 
 import { BiSolidBookReader } from "react-icons/bi";
 
 import { savePageNum, setSearchWord } from './redux/store';
 import { useDispatch, useSelector } from 'react-redux';
+
 
 
 function App() {
@@ -59,6 +61,7 @@ function App() {
                 <Route path='/calendar' element={<Calendar/>}/>
                 <Route path='/board/:categoryID' element={<Board/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
+                <Route path='/exam' element={<Exam/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/signUp' element={<SignUp/>}/>
                 <Route path='/find' element={<Find/>}/>

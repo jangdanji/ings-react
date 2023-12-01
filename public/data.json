@@ -20,7 +20,18 @@
     {
       "id": 1,
       "name": "랜덤 토익 문제",
-      "image": "/img/quiz_01.png"
+      "image": "/img/quiz_01.png",
+      "quiz-MCQ": {
+        "question": "The British Wildlife Foundation ------- donations last week by calling its longtime members.",
+        "option": [
+          "solicit",
+          "solicits",
+          "are soliciting",
+          "solicited"
+        ],
+        "answer": "",
+        "solution": ""
+      }
     },
     {
       "id": 2,
@@ -38,39 +49,38 @@
       "title": "토익 시험",
       "date": "2023-10-29T00:00:00",
       "deadline": "2023-10-16T10:00:00",
-      "memo" : "제500회 토익 시험입니다. 성적 발표는 11.08 (수) 낮 12시입니다."
+      "memo": "제500회 토익 시험입니다. 성적 발표는 11.08 (수) 낮 12시입니다."
     },
     {
       "title": "토익 시험",
       "date": "2023-11-12T00:00:00",
       "deadline": "2023-10-30T10:00:00",
-      "memo" : "제501회 토익 시험입니다. 성적 발표는 11.22 (수) 낮 12시입니다. "
+      "memo": "제501회 토익 시험입니다. 성적 발표는 11.22 (수) 낮 12시입니다. "
     },
     {
       "title": "토익 시험",
       "date": "2023-11-19T00:00:00",
       "deadline": "2023-11-06T10:00:00",
-      "memo" : "제502회 토익 시험입니다. 성적 발표는 11.29 (수) 낮 12시입니다. "
+      "memo": "제502회 토익 시험입니다. 성적 발표는 11.29 (수) 낮 12시입니다. "
     },
     {
       "title": "토익 시험",
       "date": "2023-11-26T00:00:00",
       "deadline": "2023-11-13T10:00:00",
-      "memo" : "제503회 토익 시험입니다. 성적발표는 12.06 (수) 낮 12시입니다."
+      "memo": "제503회 토익 시험입니다. 성적발표는 12.06 (수) 낮 12시입니다."
     },
     {
       "title": "토익 시험",
       "date": "2023-12-10T00:00:00",
       "deadline": "2023-11-27T10:00:00",
-      "memo" : "제504회 토익 시험입니다. 성적발표는 12.20 (수) 낮 12시입니다."
+      "memo": "제504회 토익 시험입니다. 성적발표는 12.20 (수) 낮 12시입니다."
     },
     {
       "title": "토익 시험",
       "date": "2023-12-24T00:00:00",
       "deadline": "2023-12-11T10:00:00",
-      "memo" : "제505회 토익 시험입니다. 성적발표는 2024.01.05 (금) 낮 12시입니다."
+      "memo": "제505회 토익 시험입니다. 성적발표는 2024.01.05 (금) 낮 12시입니다."
     }
-
   ],
   "board": [
     {
@@ -2821,7 +2831,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "The number of users가 주어인데 왜 복수 취급을 해서 who다음에 복수동사 require이 들어가는건가요? Who가 그저 users를 꾸며주고 있기 때문인가요?", 
+      "content": "The number of users가 주어인데 왜 복수 취급을 해서 who다음에 복수동사 require이 들어가는건가요? Who가 그저 users를 꾸며주고 있기 때문인가요?",
       "date": "2023-10-28T00:35:00",
       "id": 165,
       "title": "동사 수일치 질문이요",
@@ -2831,7 +2841,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 166,
       "title": "nothing 과 any의 차이점이 뭐죠?",
@@ -2841,7 +2851,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 167,
       "title": "by와 from의 구분법 도와주세요!",
@@ -2851,7 +2861,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 168,
       "title": "anyone과 those의 차이",
@@ -2861,7 +2871,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 169,
       "title": "해커스 천제1 문법 질문 제발… ㅠㅠㅠ",
@@ -2871,7 +2881,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 170,
       "title": "매일 토익 rc풀기 1번 질문요",
@@ -2881,7 +2891,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 171,
       "title": "부사의 최상급에 the를 쓰면 강조의 의미가 있나요?",
@@ -2891,7 +2901,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 172,
       "title": "너무 어려운데 도와주실분",
@@ -2901,7 +2911,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 173,
       "title": "토익 고사장 어디져",
@@ -2911,7 +2921,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 174,
       "title": "매일 토익 rc풀기 1번 질문요",
@@ -2921,7 +2931,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 175,
       "title": "부사의 최상급에 the를 쓰면 강조의 의미가 있나요?",
@@ -2931,7 +2941,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 176,
       "title": "너무 어려운데 도와주실분",
@@ -2941,7 +2951,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 177,
       "title": "토익 고사장 어디져",
@@ -2951,7 +2961,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 178,
       "title": "매일 토익 rc풀기 1번 질문요",
@@ -2961,7 +2971,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 179,
       "title": "부사의 최상급에 the를 쓰면 강조의 의미가 있나요?",
@@ -2971,7 +2981,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 180,
       "title": "너무 어려운데 도와주실분",
@@ -2981,7 +2991,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 181,
       "title": "토익 고사장 어디져",
@@ -2991,7 +3001,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 182,
       "title": "매일 토익 rc풀기 1번 질문요",
@@ -3001,7 +3011,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 183,
       "title": "부사의 최상급에 the를 쓰면 강조의 의미가 있나요?",
@@ -3011,7 +3021,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 184,
       "title": "너무 어려운데 도와주실분",
@@ -3021,7 +3031,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 185,
       "title": "토익 고사장 어디져",
@@ -3031,7 +3041,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 186,
       "title": "해커스 토익 스타트 리딩 질문입니당",
@@ -3041,7 +3051,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 187,
       "title": "so too big 이런 표현이 가능한가요? 그냥 too big이라고만",
@@ -3051,7 +3061,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 188,
       "title": "현재완료시제와 단순과거시제 둘 중 어느것이 먼저 일어난 일?",
@@ -3061,7 +3071,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 189,
       "title": "문장 이렇게 구성되는건 틀리는걸까요?",
@@ -3071,7 +3081,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 190,
       "title": "매일 토익 rc풀기 1번 질문요",
@@ -3081,7 +3091,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T00:35:00",
       "id": 191,
       "title": "부사의 최상급에 the를 쓰면 강조의 의미가 있나요?",
@@ -3091,7 +3101,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 192,
       "title": "너무 어려운데 도와주실분",
@@ -3101,7 +3111,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 193,
       "title": "토익 고사장 어디져",
@@ -3111,7 +3121,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 194,
       "title": "해커스 토익 스타트 리딩 질문입니당",
@@ -3121,7 +3131,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 195,
       "title": "so too big 이런 표현이 가능한가요? 그냥 too big이라고만",
@@ -3131,7 +3141,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T10:35:00",
       "id": 196,
       "title": "현재완료시제와 단순과거시제 둘 중 어느것이 먼저 일어난 일?",
@@ -3141,7 +3151,7 @@
     {
       "category": 1,
       "comment": [],
-      "content": "냉무", 
+      "content": "냉무",
       "date": "2023-10-28T22:35:00",
       "id": 197,
       "title": "문장 이렇게 구성되는건 틀리는걸까요?",
@@ -3586,7 +3596,7 @@
     },
     {
       "category": 1,
-      "comment":[
+      "comment": [
         {
           "user": "둠피스트",
           "text": "팟34 스키밍 방법을 다시 한번 살펴 보세요. 무작정 보기를 밑줄 그으면서 줄줄이 해석하는 것 보단 핵심 주제만 표시 하고 바로 넘어가는 훈련을 해보세요",
@@ -3603,7 +3613,7 @@
     },
     {
       "category": 1,
-      "comment" : [
+      "comment": [
         {
           "user": "윤석열",
           "text": "발음을 신경쓰시기보단 문맥의 흐름상으로 보면 어떤 단어인지 감이 잡히실거에요!!",
@@ -3627,7 +3637,6 @@
     }
   ],
   "category": [
-
     {
       "id": 0,
       "categoryName": "전체 게시글",
@@ -3674,16 +3683,16 @@
       "intro": "입시자료 게시판은 다양한 입시 시험 자료 및 정보를 공유하고, 합격을 향한 준비에 도움을 주는 공간입니다. 함께 성공을 위한 자료를 찾거나 공유하세요!"
     }
   ],
-  "member" : [
+  "member": [
     {
-      "userNum" : 0,
-      "userJoinDate" : "Sun Nov 19 2023 21:08:35 GMT+0900 (한국 표준시)",
+      "userNum": 0,
+      "userJoinDate": "Sun Nov 19 2023 21:08:35 GMT+0900 (한국 표준시)",
       "userID": "test1234",
       "userPW": "test1234",
-      "userName" : "루시우",
-      "userGender" : "male",
-      "userPhone" : "01012345678",
-      "userEmail" : "defmaybe69@gmail.com"
+      "userName": "루시우",
+      "userGender": "male",
+      "userPhone": "01012345678",
+      "userEmail": "defmaybe69@gmail.com"
     }
   ]
 }
