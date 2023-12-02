@@ -1,0 +1,572 @@
+{
+  "quiz": [
+    {
+      "id": 1,
+      "name": "랜덤 토익 문제",
+      "examType" : "rc",
+      "image": "/img/quiz_01.png"
+    },
+    {
+      "id": 2,
+      "name": "랜덤 토익 단어",
+      "examType" : "words",
+      "image": "/img/quiz_02.png"
+    },
+    {
+      "id": 3,
+      "name": "랜덤 토익 스피킹",
+      "examType" : "lc",
+      "image": "/img/quiz_03.png"
+    }
+  ],
+  "RC" : [
+    {
+      "question": "The British Wildlife Foundation ------- donations last week by calling its longtime members.",
+      "options": [
+        "solicit",
+        "solicits",
+        "are soliciting",
+        "solicited"
+      ],
+      "answer": "solicited",
+      "solution": "이 문장은 과거 시제를 사용해야 합니다. 'last week'라는 표현 때문에, 과거에 일어난 사건을 나타내야 하므로, 올바른 답은 'solicited'입니다. 따라서, 정답은 (D)입니다."
+    },
+    {
+      "question": "The company’s new Weather Go application claims to be the most ------- in making forecasts.",
+      "options": [
+        "crowded",
+        "quite",
+        "accurate",
+        "verbal"
+      ],
+      "answer": "accurate",
+      "solution": "이 문장에서 'the most' 뒤에 오는 단어는 형용사이며, 'making forecasts'와 관련이 있어야 합니다. 'accurate'는 '정확한'이라는 뜻으로, 예보를 만드는 데 있어 가장 중요한 특성을 나타냅니다. 따라서, 정답은 (C) 'accurate'입니다."
+    },
+    {
+      "question": "The Food Fresh grocery chain will fine ------- parking at their lots without visiting their stores.",
+      "options": [
+        "neither",
+        "anyone",
+        "which",
+        "both"
+      ],
+      "answer": "anyone",
+      "solution": "이 문장에서 빈칸은 주어를 필요로 합니다. 'The Food Fresh grocery chain will fine -------' 부분에서, 벌금을 부과할 대상이 명확해야 합니다. 'anyone'이 이 문맥에서 가장 적절한 단어입니다, 왜냐하면 그것은 매장을 방문하지 않고 주차장을 이용하는 모든 사람들을 포괄하기 때문입니다. 따라서, 정답은 (B) 'anyone'입니다."
+    },
+    {
+      "question": "The city’s decision ------- ticket prices on the subway attracted criticism from many residents.",
+      "options": [
+        "raise",
+        "raises",
+        "has raised",
+        "to raise"
+      ],
+      "answer": "to raise",
+      "solution": "이 문장에서는 'The city’s decision' 다음에 동사의 원형을 필요로 합니다. 이는 'to' 무한형 구조를 사용하여 표현되며, 'decision to do something'이라는 표현이 올바른 문법 구조입니다. 'to raise'는 '올리다'라는 의미로, '지하철 티켓 가격을 올리기로 한 도시의 결정'을 나타냅니다. 따라서, 정답은 (D) 'to raise'입니다."
+    },
+    {
+      "question": "The company has gained a competitive ------- in the marketplace with an extensive promotional campaign.",
+      "options": [
+        "advantage",
+        "approval",
+        "admission",
+        "ornament"
+      ],
+      "answer": "advantage",
+      "solution": "이 문장에서는 'competitive'와 매치되는 단어가 필요합니다. 'competitive advantage'는 경쟁 우위를 의미하는 일반적인 표현입니다. 이는 회사가 시장에서 경쟁력을 갖게 되었음을 나타냅니다, 특히 'extensive promotional campaign'을 통해. 따라서, 정답은 (A) 'advantage'입니다."
+    },
+    {
+      "question": "Mr. Kempner’s documentary on poverty in Africa is ------- touching and well researched.",
+      "options": [
+        "deeply",
+        "deepen",
+        "deepening",
+        "depth"
+      ],
+      "answer": "deeply",
+      "solution": "이 문장에서는 형용사 'touching'과 'well researched'를 수식할 부사가 필요합니다. 'deeply'는 감정이나 상태의 깊이를 나타내는 부사로, 여기서 'touching and well researched'를 강조하기 위해 사용됩니다. 'deepen', 'deepening', 'depth'는 이 문맥에 맞지 않는 단어들입니다. 따라서, 정답은 (A) 'deeply'입니다."
+    },
+    {
+      "question": "------- performing her duties as president of Carter Inc., Ms. Clark operates an animal shelter.",
+      "options": [
+        "Across",
+        "Furthermore",
+        "However",
+        "Besides"
+      ],
+      "answer": "Besides",
+      "solution": "이 문장에서는 Ms. Clark가 Carter Inc.의 회장으로서의 업무를 수행하는 것 외에 다른 활동을 하는 것을 나타내야 합니다. 'Besides'는 '뿐만 아니라'라는 의미로, 여기서는 그녀가 회장 역할 외에도 동물 보호소를 운영한다는 것을 나타냅니다. 'Across', 'Furthermore', 'However'는 이 문맥에 적합하지 않습니다. 따라서, 정답은 (D) 'Besides'입니다."
+    },
+    {
+      "question": "Mr. Bergman asked his secretary ------- she kept copies of the signed contracts.",
+      "options": [
+        "that",
+        "for",
+        "where",
+        "though"
+      ],
+      "answer": "where",
+      "solution": "이 문장에서 Mr. Bergman은 비서에게 서명된 계약서 사본을 어디에 보관했는지를 묻고 있습니다. 'where'는 위치를 묻는 질문에 적합한 단어입니다. 'that', 'for', 'though'는 이 문맥에 맞지 않습니다. 따라서, 정답은 (C) 'where'입니다."
+    },
+    {
+      "question": "In her presentation, the director insisted that switching suppliers would save a ------- sum of money.",
+      "options": [
+        "sudden",
+        "prolonged",
+        "considerate",
+        "substantial"
+      ],
+      "answer": "substantial",
+      "solution": "이 문장에서는 공급업체를 변경함으로써 상당한 금액을 절약할 수 있다는 내용이 나타나고 있습니다. 'substantial'은 '상당한'이라는 의미로, 이 문맥에서 가장 적절합니다. 'sudden' (갑작스러운), 'prolonged' (장기간의), 'considerate' (사려 깊은)는 여기에 맞지 않습니다. 따라서, 정답은 (D) 'substantial'입니다."
+    },
+    {
+      "question": "Despite budget -------, the Branson Diner wants to renovate its old facilities as much as possible.",
+      "options": [
+        "restrains",
+        "restrained",
+        "to restrain",
+        "restraints"
+      ],
+      "answer": "restraints",
+      "solution": "이 문장에서는 Branson Diner가 예산 제한에도 불구하고 최대한 시설을 개조하려 한다는 것을 나타내야 합니다. 'restraints'는 '제한'이라는 의미로, 여기에 적합합니다. 나머지 단어들은 문맥에 맞지 않습니다. 따라서, 정답은 (D) 'restraints'입니다."
+    },
+    {
+      "question": "The Hanser Fund ------- monitors developments around the world in search of promising investments.",
+      "options": [
+        "recently",
+        "constantly",
+        "originally",
+        "mutually"
+      ],
+      "answer": "constantly",
+      "solution": "이 문장에서는 Hanser Fund가 전 세계의 발전을 지속적으로 모니터링하여 유망한 투자를 찾는다는 것을 나타내야 합니다. 'constantly'는 '지속적으로'라는 의미로, 이 상황에 적합합니다. 다른 단어들은 문맥에 맞지 않습니다. 따라서, 정답은 (B) 'constantly'입니다."
+    },
+    {
+      "question": "------- her book signing tour, world-famous author Candice Mallet plans to work on another novel.",
+      "options": [
+        "Between",
+        "Following",
+        "Except",
+        "Whereas"
+      ],
+      "answer": "Following",
+      "solution": "이 문장에서는 유명한 작가 Candice Mallet이 그녀의 서명 투어가 끝난 후 다른 소설 작업을 할 계획이라는 것을 나타내야 합니다. 'Following'는 '뒤이어'라는 의미로, 이 상황에 적합합니다. 나머지 단어들은 문맥에 맞지 않습니다. 따라서, 정답은 (B) 'Following'입니다."
+    },
+    {
+      "question": "While his cell phone was being repaired, Mr. Thompson had to ------- with his colleagues via e-mail.",
+      "options": [
+        "listen",
+        "deliver",
+        "announce",
+        "correspond"
+      ],
+      "answer": "correspond",
+      "solution": "이 문장에서는 Mr. Thompson이 휴대폰이 수리되는 동안 동료들과 이메일을 통해 소통해야 했다는 것을 나타내야 합니다. 'correspond'는 '통신하다'라는 의미로, 이 상황에 적합합니다. 나머지 단어들은 문맥에 맞지 않습니다. 따라서, 정답은 (D) 'correspond'입니다."
+    },
+    {
+      "question": "------- customers have accumulated 1,000 rewards points, they can convert those points into cash.",
+      "options": [
+        "In case of",
+        "Even",
+        "Provided",
+        "Instead"
+      ],
+      "answer": "Provided",
+      "solution": "이 문장에서는 고객들이 1,000 포인트를 적립하면 그 포인트를 현금으로 전환할 수 있다는 조건을 나타내야 합니다. 'Provided'는 '만약 ...라면'이라는 의미로, 여기에 적합합니다. 다른 단어들은 이 조건을 나타내는 데 적합하지 않습니다. 따라서, 정답은 (C) 'Provided'입니다."
+    },
+    {
+      "question": "Many participants in the Franklin Marathon left the race without ------- the entire course.",
+      "options": [
+        "complete",
+        "completing",
+        "completed",
+        "completion"
+      ],
+      "answer": "completing",
+      "solution": "'completing'은 'complete'의 동명사 형태로, 전치사 'without' 뒤에는 동명사가 와야 합니다. 'complete', 'completed', 'completion'은 문법적으로 이 위치에 맞지 않습니다."
+    },
+    {
+      "question": "Instead of venturing out in New Orleans, most passengers decided to dine ------- the cruise ship.",
+      "options": [
+        "during",
+        "toward",
+        "aboard",
+        "above"
+      ],
+      "answer": "aboard",
+      "solution": "'aboard'는 '크루즈 배 안에서'라는 의미의 적절한 전치사입니다. 'during', 'toward', 'above'는 위치나 상황을 나타내는 이 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "------- travelers pass through the security checkpoint, they may proceed to the boarding area.",
+      "options": [
+        "Once",
+        "Unless",
+        "While",
+        "Finally"
+      ],
+      "answer": "Once",
+      "solution": "'Once'는 '일단 ~하면'이라는 의미로, 보안 검문소를 통과한 후에 탑승 지역으로 진행할 수 있다는 것을 나타냅니다. 'Unless', 'While', 'Finally'는 이 문맥에서 시간적 연속성을 나타내지 않습니다."
+    },
+    {
+      "question": "A number of residents ------- the city of Yorkshire’s new rule about paying extra for plastic bags.",
+      "options": [
+        "distributed",
+        "protested",
+        "revealed",
+        "differed"
+      ],
+      "answer": "protested",
+      "solution": "'protested'는 '항의하다'라는 의미로, 적합합니다. 'distributed'는 '분배하다', 'revealed'는 '밝히다', 'differed'는 '다르다'라는 의미로, 이 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "The errors in the corrected manuscript were quite -------, involving just a few misspellings.",
+      "options": [
+        "minor",
+        "inferior",
+        "severe",
+        "close"
+      ],
+      "answer": "minor",
+      "solution": "'minor'는 '사소한'이라는 의미로, 몇 개의 철자 오류에 관한 문맥에서 적합합니다. 'inferior'는 '열등한', 'severe'는 '심각한', 'close'는 '가까운'을 의미하여 이 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "Prior to ------- Henke, Meyer Industries was already the largest steel company in the state.",
+      "options": [
+        "acquire",
+        "acquires",
+        "acquiring",
+        "acquisition"
+      ],
+      "answer": "acquiring",
+      "solution": "'acquiring'는 '획득하다'라는 의미의 동명사 형태로, 'Prior to' 뒤에 동명사가 와야 합니다. 'acquire', 'acquires', 'acquisition'은 문법적으로 이 위치에 맞지 않습니다."
+    },
+    {
+      "question": "This new program can recommend ------- photos journalists would like to accompany in their articles.",
+      "options": [
+        "which",
+        "and",
+        "whenever",
+        "that"
+      ],
+      "answer": "that",
+      "solution": "'that'은 정관사로, 여기서는 '기자들이 기사에 동반하고 싶어하는 사진'을 지정하는 데 적합합니다. 'which', 'and', 'whenever'는 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "Today’s issue of The St. Louis Ledger contains a ------- description of the festivities for July 4.",
+      "options": [
+        "comprehend",
+        "comprehending",
+        "comprehensive",
+        "comprehension"
+      ],
+      "answer": "comprehensive",
+      "solution": "'comprehensive'는 '종합적인'이라는 의미로, 7월 4일 축제에 대한 자세한 설명을 나타냅니다. 'comprehend', 'comprehending', 'comprehension'은 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "Tickets are sold out for all performances of the opera in a flash, and more dates ------- soon.",
+      "options": [
+        "will be added",
+        "added",
+        "to be added",
+        "have added"
+      ],
+      "answer": "will be added",
+      "solution": "'will be added'는 미래에 더 많은 공연 날짜가 추가될 것임을 나타내는 미래 시제의 수동태 표현입니다. 'added', 'to be added', 'have added'는 이 문맥에서 문법적으로 적절하지 않습니다."
+    },
+    {
+      "question": "Customers who cannot find shoes in their size can ------- order them from the store’s Web site.",
+      "options": [
+        "presume",
+        "presuming",
+        "presumable",
+        "presumably"
+      ],
+      "answer": "presumably",
+      "solution": "'presumably'는 '아마도'라는 의미의 부사로, 이 문맥에서 고객이 웹사이트에서 신발을 주문할 수 있다는 가정을 나타냅니다. 'presume', 'presuming', 'presumable'은 문맥에 맞지 않습니다."
+    },
+    {
+      "question": "The mayor has expressed his desire to resign, so ------- potential replacements are being evaluated.",
+      "options": [
+        "neither",
+        "every",
+        "whose",
+        "several"
+      ],
+      "answer": "several",
+      "solution": "'several'은 '여러'라는 의미로, 시장의 사임 의사에 따라 여러 후보자가 평가되고 있다는 것을 나타냅니다. 'neither', 'every', 'whose'는 이 문맥에서 적절하지 않습니다."
+    },
+    {
+      "question": "To avoid becoming fixated on one career path, Mr. Willis remained ------- about his prospects.",
+      "options": [
+        "flexible",
+        "successful",
+        "informative",
+        "reliable"
+      ],
+      "answer": "flexible",
+      "solution": "'flexible'은 '유연한'이라는 의미로, 한 경로에 국한되지 않고 다양한 경력 기회에 열려 있는 것을 나타냅니다. 'successful', 'informative', 'reliable'은 이 문맥에서 적절하지 않습니다."
+    }
+  ],
+  "words": [
+    {
+      "word": "award",
+      "part_of_speech": "v/n",
+      "definition": "수여하다; 상"
+    },
+    {
+      "word": "rack",
+      "part_of_speech": "n",
+      "definition": "받침대, 선반"
+    },
+    {
+      "word": "sturdy",
+      "part_of_speech": "adj",
+      "definition": "튼튼한, 견고한"
+    },
+    {
+      "word": "occupy",
+      "part_of_speech": "v",
+      "definition": "차지하다, 사용하다, 거주하다"
+    },
+    {
+      "word": "eligible",
+      "part_of_speech": "adj",
+      "definition": "적격의, 자격이 있는"
+    },
+    {
+      "word": "amenity",
+      "part_of_speech": "n",
+      "definition": "생활 편의 시설"
+    },
+    {
+      "word": "vary",
+      "part_of_speech": "v",
+      "definition": "다르다, 달라지다"
+    },
+    {
+      "word": "contrary",
+      "part_of_speech": "adj",
+      "definition": "~와는 다른, 반대되는"
+    },
+    {
+      "word": "adjustment",
+      "part_of_speech": "n",
+      "definition": "수정, 적응, 조정"
+    },
+    {
+      "word": "exploratory",
+      "part_of_speech": "adj",
+      "definition": "탐사의, 탐구의"
+    },
+    {
+      "word": "inventory",
+      "part_of_speech": "n",
+      "definition": "물품 목록, 재고품"
+    },
+    {
+      "word": "indefinitely",
+      "part_of_speech": "adv",
+      "definition": "무기한으로"
+    },
+    {
+      "word": "plaque",
+      "part_of_speech": "n",
+      "definition": "명판, 장식판"
+    },
+    {
+      "word": "draft",
+      "part_of_speech": "n/v",
+      "definition": "원고, 초안; 초안을 작성하다"
+    },
+    {
+      "word": "forklift",
+      "part_of_speech": "n",
+      "definition": "지게차"
+    },
+    {
+      "word": "matter",
+      "part_of_speech": "n/v",
+      "definition": "문제, 사안; 중요하다"
+    },
+    {
+      "word": "graduate",
+      "part_of_speech": "n/v",
+      "definition": "대학 졸업자; 졸업하다"
+    },
+    {
+      "word": "honor",
+      "part_of_speech": "v/n",
+      "definition": "수여하다; 존경, 공경"
+    },
+    {
+      "word": "relocate",
+      "part_of_speech": "v",
+      "definition": "이전하다, 이동하다"
+    },
+    {
+      "word": "temporarily",
+      "part_of_speech": "adv",
+      "definition": "일시적으로"
+    },
+    {
+      "word": "dependable",
+      "part_of_speech": "adj",
+      "definition": "믿을 수 있는"
+    },
+    {
+      "word": "based on",
+      "part_of_speech": "phr",
+      "definition": "~에 근거하여"
+    },
+    {
+      "word": "appreciation",
+      "part_of_speech": "n",
+      "definition": "감탄, 감사, 공감"
+    },
+    {
+      "word": "fellowship",
+      "part_of_speech": "n",
+      "definition": "(대학원생에게 주는) 장학금, 연구비"
+    },
+    {
+      "word": "deservedly",
+      "part_of_speech": "adv",
+      "definition": "(그럴 자격이 있으므로) 마땅히"
+    },
+    {
+      "word": "keynote speech",
+      "part_of_speech": "phr",
+      "definition": "기조 연설"
+    },
+    {
+      "word": "plumber",
+      "part_of_speech": "n",
+      "definition": "배관공"
+    },
+    {
+      "word": "unlock",
+      "part_of_speech": "v",
+      "definition": "열다, 드러내다"
+    },
+    {
+      "word": "pamphlet",
+      "part_of_speech": "n",
+      "definition": "소책자, 팸플릿"
+    },
+    {
+      "word": "landmark",
+      "part_of_speech": "n",
+      "definition": "주요 지형지물, 랜드마크"
+    },
+    {
+      "word": "orient",
+      "part_of_speech": "v",
+      "definition": "(새 환경 등에) 적응시키다, ~을 향하게 하다"
+    },
+    {
+      "word": "branch",
+      "part_of_speech": "n",
+      "definition": "지사, 분점, 나뭇가지"
+    },
+    {
+      "word": "transfer",
+      "part_of_speech": "v/n",
+      "definition": "이동하다; 이동"
+    },
+    {
+      "word": "aisle",
+      "part_of_speech": "n",
+      "definition": "통로"
+    },
+    {
+      "word": "reach for",
+      "part_of_speech": "phr",
+      "definition": "손을 뻗다"
+    },
+    {
+      "word": "statement",
+      "part_of_speech": "n",
+      "definition": "성명, 진술"
+    },
+    {
+      "word": "take place",
+      "part_of_speech": "phr",
+      "definition": "개최되다, 열리다"
+    },
+    {
+      "word": "ownership",
+      "part_of_speech": "n",
+      "definition": "소유(권)"
+    },
+    {
+      "word": "budget report",
+      "part_of_speech": "phr",
+      "definition": "예산 보고(서)"
+    },
+    {
+      "word": "proposal",
+      "part_of_speech": "n",
+      "definition": "제안, 제의"
+    },
+    {
+      "word": "lean over",
+      "part_of_speech": "phr",
+      "definition": "~에 기대다, 몸을 구부리다"
+    },
+    {
+      "word": "statistics",
+      "part_of_speech": "n",
+      "definition": "통계, 통계 자료"
+    },
+    {
+      "word": "assemble",
+      "part_of_speech": "v",
+      "definition": "모이다, 모으다, 조립하다"
+    },
+    {
+      "word": "appointment",
+      "part_of_speech": "n",
+      "definition": "약속, 임명"
+    },
+    {
+      "word": "questionnaire",
+      "part_of_speech": "n",
+      "definition": "설문지, 질문표"
+    },
+    {
+      "word": "luncheon",
+      "part_of_speech": "n",
+      "definition": "오찬"
+    },
+    {
+      "word": "look over",
+      "part_of_speech": "phr",
+      "definition": "살펴보다, 훑어보다"
+    },
+    {
+      "word": "popularity",
+      "part_of_speech": "n",
+      "definition": "인기"
+    },
+    {
+      "word": "human resources",
+      "part_of_speech": "phr",
+      "definition": "인적 자원, 인사부"
+    },
+    {
+      "word": "dedicated",
+      "part_of_speech": "adj",
+      "definition": "전용의, 헌신적인"
+    },
+    {
+      "word": "refreshment",
+      "part_of_speech": "n",
+      "definition": "다과, 가벼운 식사"
+    },
+    {
+      "word": "retrieve",
+      "part_of_speech": "v/n",
+      "definition": "되찾다, 회수하다; 회수"
+    }
+  ]
+}
