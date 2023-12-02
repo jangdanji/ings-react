@@ -557,6 +557,69 @@ $footerHeight: 145px;
           
         }
 
+        .quiz-container{
+          color: $colorText2;
+          padding: 30px 15px;
+          font-size: 18px;
+
+          .title{font-size: 24px; font-weight: bold; @include icon;}
+          .question{
+            padding: 10px;
+            p > span{font-size: 24px; font-weight: bold;}
+          }
+          .quiz-options{
+            ul > li{
+              line-height: 150%; cursor: pointer;
+              display: flex;
+              &:hover{color: $colorText;}
+
+
+
+              .check, .incorrect{
+                display: flex; justify-content: center; align-items: center;
+                margin-left: 5px; display: none;
+              }
+              .check{color: green;}
+              .incorrect{color: red;}
+            }
+
+            ul > li.checked{
+              color: $colorText; text-decoration: underline;
+            }
+          }
+          .input-words{
+            padding: 10px;
+            input{
+              padding: 10px; width: 50%; border-radius: 5px;
+            }
+          }
+          .choice-submit{
+            display: flex; justify-content: space-between; align-items: center;
+            margin: 15px 0;
+            .my-answer{
+              font-weight: bold;
+            }
+            button{
+              padding: 5px 15px; border-radius: 5px;
+            }
+          }
+          .solution{
+            margin-bottom: 15px;
+            .answer{
+              font-size: 20px; font-weight: bold; margin-bottom: 10px;
+            }
+            .solution-detail{
+
+            }
+          }
+          .next-quiz{
+            display: flex; justify-content: flex-end;
+            button{
+              padding: 5px 15px; border-radius: 5px;
+            }
+          }
+        }
+
         .loading{
           height: 100vh;
 
@@ -866,10 +929,10 @@ $footerHeight: 145px;
         border-radius: 10px;
 
         .logo{
-          @include icon;
-          font-size: 24px; letter-spacing: 5px;
+          @include icon; color: $colorText2;
+          font-size: 28px; letter-spacing: 5px;
           justify-content: center;
-          padding: 40px 0;
+          padding: 20px 0 40px 0;
           // border: 1px solid $colorSub;
           border-radius: 5px;
         }
