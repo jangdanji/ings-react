@@ -54,6 +54,8 @@ export default function Exam() {
         data['quiz']
       )
 
+      setCount(0); setIsDone(false);
+
     })
     .catch((error) => console.error('데이터 가져오기 실패 : ', error))
 
