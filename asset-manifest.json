@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ings-react/static/css/main.5f472847.css",
-    "main.js": "/ings-react/static/js/main.16578fac.js",
+    "main.js": "/ings-react/static/js/main.20e30743.js",
     "static/js/787.f1ba9c08.chunk.js": "/ings-react/static/js/787.f1ba9c08.chunk.js",
     "index.html": "/ings-react/index.html",
     "main.5f472847.css.map": "/ings-react/static/css/main.5f472847.css.map",
-    "main.16578fac.js.map": "/ings-react/static/js/main.16578fac.js.map",
+    "main.20e30743.js.map": "/ings-react/static/js/main.20e30743.js.map",
     "787.f1ba9c08.chunk.js.map": "/ings-react/static/js/787.f1ba9c08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5f472847.css",
-    "static/js/main.16578fac.js"
+    "static/js/main.20e30743.js"
   ]
 }
