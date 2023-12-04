@@ -2,7 +2,7 @@
 
 import './App.scss';
 
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 
 import Home from './pages/Home'
 import Board from './pages/Board'
@@ -18,10 +18,19 @@ import { BiSolidBookReader } from "react-icons/bi";
 
 import { savePageNum, setSearchWord } from './redux/store';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 
 
 
 function App() {
+
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
+  
 
   const navigate = useNavigate()
   const dispatch = useDispatch()

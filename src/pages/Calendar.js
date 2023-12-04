@@ -14,6 +14,9 @@ import { LuCalendar, LuCalendarX, LuCalendarPlus } from "react-icons/lu";
 
 import Loading from './Loading'
 
+import { useNavigate } from 'react-router-dom';
+import { setLoginStatus } from '../redux/store';
+
 export default function Calendar() {
 
   const dispatch = useDispatch()
@@ -22,6 +25,15 @@ export default function Calendar() {
   // const mySchedule = useSelector((state) => state.mySchedule)
 
   const [mySchedule, setSchedule] = useState(null)
+
+  const navigate = useNavigate()
+
+  
+  const { isLogin, loginUser } = useSelector((state) => ({
+    isLogin: state.userState.loginStatus,
+    loginUser: state.userState.loginData
+  }))
+
 
   useEffect(() => {
 
@@ -90,24 +102,52 @@ export default function Calendar() {
 
         <div className='side-content'>
 
-          <div className='my-page'>
+        <div className='my-page'>
+              {
+                !isLogin &&
+                <>
+                  <p className='message-box'>로그인하셔서 개인 일정을 관리해보세요.</p>
+                  <div className='login' onClick={() => navigate('/login')}>
+                    <p className='logo'><BiSolidBookReader></BiSolidBookReader>INGS 로그인</p>
+                  </div>
+                  <div className='login-options'>
+                    <ul>
+                      <li onClick={() => navigate('/signUp')}>회원가입</li>
+                      <li onClick={() => navigate('/find')}>계정찾기</li>
+                    </ul>
+                  </div>
+                </>
+              }
 
-              <p className='message-box'>로그인하셔서 개인 일정을 관리해보세요.</p>
-              <div className='login'>
-                <p className='logo'><BiSolidBookReader></BiSolidBookReader>INGS 로그인</p>
-              </div>
-              <div className='login-options'>
-                <ul>
-                  <li>회원가입</li>
-                  <li>계정찾기</li>
-                </ul>
-              </div>
-
-          </div>
-
+              {
+                isLogin &&
+                <>
+                  <p className='message-box'>안녕하세요, {loginUser.userName}님!</p>
+                  <div className='my-page'>
+                    <p className='logo'>
+                      <BiSolidBookReader></BiSolidBookReader>
+                      {loginUser.userName} (가입일 : {
+                        new Date(loginUser.userJoinDate).toISOString().split('T')[0]
+                    })</p>
+                  </div>
 
 
-          
+                  <div className='login-options'>
+                    <ul>
+                      <li onClick={() => navigate('/myPage')}>나의 정보</li>
+                      <li onClick={() => navigate(`/board/0/?searchWord=${loginUser.userName}&searchOption=user`)}>나의 글</li>
+                      <li onClick={() => {
+                        dispatch( setLoginStatus([false, '']) )
+                        alert('로그아웃 되었습니다.')
+                        navigate('/')
+                      }}>로그아웃</li>
+                    </ul>
+                  </div>
+                </>
+              }
+
+            </div>
+
           {
             mySchedule != null &&
             <>

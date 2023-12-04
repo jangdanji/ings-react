@@ -91,7 +91,7 @@ function Home() {
                            <div className='board-content'>
                              <ul>
                                {
-                                pageData['board'].filter((post) => post.category == data.id).slice(-10).reverse().map((p) => {
+                                pageData['board'].filter((post) => post.category == data.id).slice(0, 10).map((p) => {
                                   return(
                                     <li key={'post' + p.id}>
                                       <p className='post-title' onClick={ () => {navigate(`/post/${p.id}`); dispatch( savePageNum(1) ) }}>{p.title}</p>
@@ -153,7 +153,7 @@ function Home() {
                         <div className='board-content'>
                           <ul>
                             {
-                              pageData['board'].filter((post) => post.category == data.id).slice(-10).reverse().map((p) => {
+                              pageData['board'].filter((post) => post.category == data.id).slice(0, 10).map((p) => {
                                 return(
                                   <li key={'post' + p.id}>
                                     <p className='post-title' onClick={ () => navigate(`/post/${p.id}`)}>{p.title}</p>
@@ -240,7 +240,7 @@ function Home() {
                             {/* <p className='toeic-result-date'>성적 발표 : {/[0-9]{4}-[0-9]{2}-[0-9]{2}/.exec(d.result_date)}</p> */}
                           </div>
                           <div className='schedule-detail'>
-                            <p>접수하기</p>
+                            <a href='https://exam.toeic.co.kr/'>접수하기</a>
                           </div>
                         </li>
                       )
