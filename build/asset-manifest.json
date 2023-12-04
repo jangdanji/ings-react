@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ings-react/static/css/main.20725c22.css",
+    "main.js": "/ings-react/static/js/main.cfb744be.js",
+    "static/js/787.f1ba9c08.chunk.js": "/ings-react/static/js/787.f1ba9c08.chunk.js",
+    "index.html": "/ings-react/index.html",
+    "main.20725c22.css.map": "/ings-react/static/css/main.20725c22.css.map",
+    "main.cfb744be.js.map": "/ings-react/static/js/main.cfb744be.js.map",
+    "787.f1ba9c08.chunk.js.map": "/ings-react/static/js/787.f1ba9c08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20725c22.css",
+    "static/js/main.cfb744be.js"
+  ]
+}
