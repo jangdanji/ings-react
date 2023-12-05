@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoginStatus } from '../redux/store'
 
+import { HiMiniXMark } from "react-icons/hi2";
+
 export default function Login() {
 
   const navigate = useNavigate()
@@ -24,6 +26,10 @@ export default function Login() {
     })
     .catch((error) => console.log('fetch 실패 : ' + error))
   }, [])
+
+  const [closeAlert, setCloseAlert] = useState(false)
+
+
 
   const handleSubmit = (e) => {
 
@@ -55,6 +61,20 @@ export default function Login() {
           <div className='logo'><BiSolidBookReader></BiSolidBookReader>INGS</div>
 
           <form onSubmit={handleSubmit}>
+
+            {
+              !closeAlert &&
+              <>
+                <div className='test-alert'>
+                  <p className='alert-text'>
+                    test1234, test1234로 테스트 로그인이 가능합니다.
+                  </p>
+                  <p className='icon' style={{color: 'red'}} onClick={() => setCloseAlert(true)}><HiMiniXMark /></p>
+                </div>
+              </>
+            }
+
+
             <div className="form-group id-form">
               <label htmlFor="username">아이디</label>
               <input 

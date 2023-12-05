@@ -930,6 +930,15 @@ $footerHeight: 145px;
         padding: 25px 25px 50px 25px; background-color: $colorMain;
         border-radius: 10px;
 
+        .test-alert{
+          display: flex; justify-content: space-between;
+          padding: 10px 0;
+          .icon{
+            @include icon; font-size: 18px;
+            cursor: pointer;
+          }
+        }
+
         .logo{
           @include icon; color: $colorText2;
           font-size: 28px; letter-spacing: 5px;

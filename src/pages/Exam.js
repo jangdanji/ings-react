@@ -18,12 +18,6 @@ export default function Exam() {
   const [quizData, setData] = useState([])
   const [c, setCount] = useState(0)
 
-  // const [nowQuizState, setQuizState] = ({
-  //   myChoice: '', answer: ''
-  // })
-
-  // const [optionCheck, setOptionCheck] = ([false, false, false, false])
-
   // RC
   const [checkedIndex, setCheckedIndex] = useState(null)
   const [correctIndex, setCorrectIndex] = useState(null)
@@ -39,6 +33,8 @@ export default function Exam() {
     .then((response) => response.json())
     .then((data) => {
 
+      // 퀴즈 종류에 따라 다른 데이터를 state에 저장하기
+
       if (examType == 'rc') {
         setQuiz(
           shuffle(data.RC)
@@ -53,7 +49,8 @@ export default function Exam() {
       setData(
         data['quiz']
       )
-
+      
+      // 초기화
       setCount(0); setIsDone(false);
 
     })
@@ -100,7 +97,6 @@ export default function Exam() {
                       <p className='quiz-name'>{quiz.name}</p>
                       <p className='quiz-start'>시작하기</p>
                         
-                      
                     </div>
                   )
                 })}
