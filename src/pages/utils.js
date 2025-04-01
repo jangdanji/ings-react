@@ -6,6 +6,7 @@ export function postDateCalculator(postDate, nowDate) {
   const hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60))
   const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24))
   const monthsDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30)) // 월 단위 계산
+  const yearsDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365)) // 년 단위 계산
 
   if (minutesDiff < 1) {
         return '방금 전'
@@ -15,8 +16,10 @@ export function postDateCalculator(postDate, nowDate) {
         return hoursDiff + '시간 전'
   } else if (daysDiff < 30) {
         return daysDiff + '일 전'
-  } else {
+  } else if (monthsDiff < 12) {
         return monthsDiff + '개월 전'
+  } else {
+        return yearsDiff + '년 전'
   }
 
 }
